@@ -32,10 +32,14 @@ The Discovery workspace has three regions:
 - **Left sidebar** — the control surface, organised into stacked panels: **Project**,
   **Bookshelf**, **Tasks**, **Purpose**, **Engines**, and **Agents** (each covered
   below).
-- **Center editor** — the notebook / deliverable being produced (here, the
-  `af-rotor-research-topics.md` draft) with a live Markdown preview beside it.
+- **Center** — a **live action log** streaming each agent step (Thinking /
+  ActionProposed / ActionApplied) beside the **rendered deliverable** it is producing
+  (here, _"Five Research Topics…"_).
 - **Right Chat panel** — the chat-driven experience that orchestrates the agents and
-  streams their output.
+  streams their output, with a **Sessions** history of every run.
+
+Everything happens in this one workspace: retrieval, reasoning, review, and the
+finished document, side by side.
 
 ---
 
