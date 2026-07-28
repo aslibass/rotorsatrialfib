@@ -1,0 +1,28 @@
+{
+  "$schema": "2",
+  "name": "f0857d49-f043-4fa1-8f99-1b1ba2c32034",
+  "dxId": "DX-10",
+  "title": "Re-ingest any failed or missing documents",
+  "description": "For any PDFs that failed ingestion, attempt re-ingest and log outcomes.",
+  "status": "onHold",
+  "parentId": "5173c3d1-19d9-4221-bcbd-122909c9a859",
+  "siblingOrder": 1,
+  "executionHistory": [
+    {
+      "createdAt": "2026-07-09T02:49:16.1510984+00:00",
+      "action": "status:New\u2192Executing",
+      "createdBy": "system",
+      "createdByType": "system",
+      "summary": "Starting re-ingest of missing source folders: ACC Guidelines, Cardiology Trials, CSANZ Guidelines, and ESC Guidelines."
+    },
+    {
+      "createdAt": "2026-07-09T03:03:10.8431733+00:00",
+      "action": "status:Executing\u2192OnHold",
+      "createdBy": "system",
+      "createdByType": "system",
+      "summary": "Blocked by platform behavior: folder-level ingest requests repeatedly timeout/stall in pending state; register_directory and resume_ingest actions return key-not-found errors. File-level ingest works but bulk backfill requires either working folder ingest support or scripted per-file batching."
+    }
+  ],
+  "createdAt": "2026-07-09T02:42:02.3635168+00:00",
+  "lastModifiedAt": "2026-07-09T03:03:10.8431733+00:00"
+}

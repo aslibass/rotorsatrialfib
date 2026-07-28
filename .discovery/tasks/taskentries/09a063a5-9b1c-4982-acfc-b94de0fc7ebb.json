@@ -1,0 +1,28 @@
+{
+  "$schema": "2",
+  "name": "09a063a5-9b1c-4982-acfc-b94de0fc7ebb",
+  "dxId": "DX-8",
+  "title": "Document effective query patterns",
+  "description": "Write up which query styles produce the best results for clinical use (e.g. \u0027ACC guidelines for X\u0027, \u0027evidence for Y in Z patients\u0027).",
+  "status": "executionDone",
+  "parentId": "60db0288-8d40-40bb-b8e7-48a97b898a85",
+  "siblingOrder": 2,
+  "executionHistory": [
+    {
+      "createdAt": "2026-07-09T03:03:47.5234974+00:00",
+      "action": "status:New\u2192Executing",
+      "createdBy": "system",
+      "createdByType": "system",
+      "summary": "Compiling effective query patterns based on successful retrieval tests across chest pain, AF anticoagulation, TAVR conduction, non-statin therapy, and HFpEF topics."
+    },
+    {
+      "createdAt": "2026-07-09T03:03:51.5786626+00:00",
+      "action": "status:Executing\u2192ExecutionDone",
+      "createdBy": "system",
+      "createdByType": "system",
+      "summary": "Effective query patterns documented from live tests: (1) Condition \u002B setting \u002B action (e.g., acute chest pain \u002B ED \u002B disposition) for pathway retrieval; (2) Disease \u002B intervention \u002B context (AF \u002B anticoagulation \u002B periprocedural) for decision pathways; (3) Procedure \u002B complication \u002B management (TAVR \u002B conduction disturbance \u002B pacemaker) for focused consensus docs; (4) Therapy class \u002B biomarker \u002B risk context (non-statin \u002B LDL \u002B ASCVD risk) for pharmacologic guidance; (5) Syndrome \u002B phenotype \u002B management (HF \u002B preserved EF \u002B management) for condition-specific pathways. Hybrid strategy returned highest relevance in current corpus."
+    }
+  ],
+  "createdAt": "2026-07-09T02:41:57.1084256+00:00",
+  "lastModifiedAt": "2026-07-09T03:03:51.5786626+00:00"
+}

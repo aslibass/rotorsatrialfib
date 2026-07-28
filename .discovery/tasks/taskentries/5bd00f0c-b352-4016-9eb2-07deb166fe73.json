@@ -1,0 +1,12 @@
+{
+  "$schema": "2",
+  "name": "5bd00f0c-b352-4016-9eb2-07deb166fe73",
+  "dxId": "DX-15",
+  "title": "Configure auto-ingest directory watch",
+  "description": "Successfully register the knowledge/ folder with directory watch so new PDFs are auto-ingested when dropped in.",
+  "status": "new",
+  "parentId": "8d35df2e-6a3e-4839-b014-23faf815addf",
+  "siblingOrder": 0,
+  "createdAt": "2026-07-09T02:42:15.1693257+00:00",
+  "lastModifiedAt": "2026-07-09T02:42:15.1693257+00:00"
+}

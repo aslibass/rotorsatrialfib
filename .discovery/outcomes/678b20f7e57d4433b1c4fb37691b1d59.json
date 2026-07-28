@@ -1,0 +1,15 @@
+{
+  "outcomeId": "678b20f7e57d4433b1c4fb37691b1d59",
+  "purposeId": "ad489857c985423295a68553ab72c8e0",
+  "title": "Staying Current",
+  "description": "New PDFs can be added to the knowledge base at any time without re-indexing the entire corpus, keeping the second brain current with new literature.",
+  "type": "capability",
+  "verificationMode": "hybrid",
+  "status": "pending",
+  "taskIds": [
+    "8d35df2e-6a3e-4839-b014-23faf815addf"
+  ],
+  "createdAt": "2026-07-09T02:09:28.7364879+00:00",
+  "updatedAt": "2026-07-09T02:42:32.3964+00:00",
+  "$schema": "2"
+}

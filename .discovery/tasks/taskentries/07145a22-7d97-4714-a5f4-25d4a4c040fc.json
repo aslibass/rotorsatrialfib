@@ -1,0 +1,28 @@
+{
+  "$schema": "2",
+  "name": "07145a22-7d97-4714-a5f4-25d4a4c040fc",
+  "dxId": "DX-6",
+  "title": "Verify all 5 folders are fully indexed and searchable",
+  "description": "Check that ACC Expert Consensus, ACC Guidelines, Cardiology Trials, CSANZ, and ESC folders are all represented in the bookshelf index.",
+  "status": "executionDone",
+  "parentId": "60db0288-8d40-40bb-b8e7-48a97b898a85",
+  "siblingOrder": 0,
+  "executionHistory": [
+    {
+      "createdAt": "2026-07-09T02:47:38.9143562+00:00",
+      "action": "status:New\u2192Executing",
+      "createdBy": "system",
+      "createdByType": "system",
+      "summary": "Starting execution: verify all five knowledge folders are fully indexed and searchable."
+    },
+    {
+      "createdAt": "2026-07-09T02:48:47.7257128+00:00",
+      "action": "status:Executing\u2192ExecutionDone",
+      "createdBy": "system",
+      "createdByType": "system",
+      "summary": "Verification executed and failed: only 80 indexed documents found vs 508 PDFs across the five source folders. Follow-up required via DX-9 ingest audit."
+    }
+  ],
+  "createdAt": "2026-07-09T02:41:57.1009573+00:00",
+  "lastModifiedAt": "2026-07-09T02:48:47.7257128+00:00"
+}

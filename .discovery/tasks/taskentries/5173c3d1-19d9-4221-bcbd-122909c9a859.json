@@ -1,0 +1,12 @@
+{
+  "$schema": "2",
+  "name": "5173c3d1-19d9-4221-bcbd-122909c9a859",
+  "dxId": "DX-3",
+  "title": "Content Coverage",
+  "description": "Confirm all 508 PDFs are extracted and ingested without errors, and generate a full document index.",
+  "status": "new",
+  "parentId": "99eae1ae-815b-480e-bae6-ba5d4cbfba2b",
+  "siblingOrder": 1,
+  "createdAt": "2026-07-09T02:41:43.1555924+00:00",
+  "lastModifiedAt": "2026-07-09T02:41:43.1555924+00:00"
+}

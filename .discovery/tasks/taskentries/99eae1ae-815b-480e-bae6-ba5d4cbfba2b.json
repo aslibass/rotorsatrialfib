@@ -1,0 +1,11 @@
+{
+  "$schema": "2",
+  "name": "99eae1ae-815b-480e-bae6-ba5d4cbfba2b",
+  "dxId": "DX-1",
+  "title": "Cardiology Canon 2026",
+  "description": "Root task for building a cardiologist\u0027s second brain from 508 clinical PDFs across ACC, ESC, CSANZ guidelines, expert consensus statements, and landmark trials.",
+  "status": "new",
+  "siblingOrder": 0,
+  "createdAt": "2026-07-09T02:41:34.6426295+00:00",
+  "lastModifiedAt": "2026-07-09T02:41:34.6426295+00:00"
+}

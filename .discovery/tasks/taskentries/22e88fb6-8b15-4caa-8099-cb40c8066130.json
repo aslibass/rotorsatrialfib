@@ -1,0 +1,12 @@
+{
+  "$schema": "2",
+  "name": "22e88fb6-8b15-4caa-8099-cb40c8066130",
+  "dxId": "DX-14",
+  "title": "Explore consensus and conflict detection",
+  "description": "Test whether the agent can identify areas where different sources agree or conflict on a clinical question.",
+  "status": "new",
+  "parentId": "c3beb462-e501-4a19-9096-8af169b1ac05",
+  "siblingOrder": 2,
+  "createdAt": "2026-07-09T02:42:08.9989489+00:00",
+  "lastModifiedAt": "2026-07-09T02:42:08.9989489+00:00"
+}

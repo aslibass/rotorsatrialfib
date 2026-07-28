@@ -1,0 +1,28 @@
+{
+  "$schema": "2",
+  "name": "cebfd513-ea15-4f47-90bf-ccb938bd6c06",
+  "dxId": "DX-7",
+  "title": "Test retrieval with sample clinical questions",
+  "description": "Run 5\u002B test queries covering drugs, diagnoses, and guideline topics. Verify results return relevant passages.",
+  "status": "executionDone",
+  "parentId": "60db0288-8d40-40bb-b8e7-48a97b898a85",
+  "siblingOrder": 1,
+  "executionHistory": [
+    {
+      "createdAt": "2026-07-09T03:03:10.9238635+00:00",
+      "action": "status:New\u2192Executing",
+      "createdBy": "system",
+      "createdByType": "system",
+      "summary": "Starting retrieval validation using representative clinical questions against current indexed corpus."
+    },
+    {
+      "createdAt": "2026-07-09T03:03:41.4225406+00:00",
+      "action": "status:Executing\u2192ExecutionDone",
+      "createdBy": "system",
+      "createdByType": "system",
+      "summary": "Completed 5 retrieval tests across chest pain ED pathways, AF anticoagulation/periprocedural guidance, TAVR conduction disturbances, non-statin LDL-lowering guidance, and HFpEF management. All queries returned relevant source passages from the indexed corpus."
+    }
+  ],
+  "createdAt": "2026-07-09T02:41:57.105362+00:00",
+  "lastModifiedAt": "2026-07-09T03:03:41.4225406+00:00"
+}

@@ -1,0 +1,68 @@
+{
+  "rubricId": "9d6b7eeb2a7c43ca8da4fa8faadfaa89",
+  "outcomeId": "9a02914d23454355ab2f0820320dbf9b",
+  "name": "AF Rotor Research Topics — Quality Rubric",
+  "questions": [
+    {
+      "questionId": "count",
+      "question": "Are there exactly 5 distinct, non-overlapping topic titles (not fewer, not more)?",
+      "answerFormat": "yesNo",
+      "weight": 1,
+      "evaluationGuidance": "Fail if fewer or more than 5, or if any two topics substantially overlap."
+    },
+    {
+      "questionId": "rationale",
+      "question": "Does each topic include a one-sentence rationale grounded in plausible pathophysiology?",
+      "answerFormat": "yesNo",
+      "weight": 1,
+      "evaluationGuidance": "Every topic must link its proposed idea to a mechanism. Missing rationale on any topic fails."
+    },
+    {
+      "questionId": "domain-span",
+      "question": "Do the topics span at least 3 distinct mechanistic domains (e.g., ion-channel/electrophysiology, fibrosis/structural substrate, mapping methodology, autonomic modulation)?",
+      "answerFormat": "scale",
+      "likertScale": {
+        "min": 1,
+        "max": 5,
+        "labels": [
+          "1 domain",
+          "2 domains",
+          "3 domains",
+          "4 domains",
+          "5+ domains"
+        ]
+      },
+      "weight": 1,
+      "evaluationGuidance": "Score 3+ passes. Count unique mechanistic domains represented across the 5 topics."
+    },
+    {
+      "questionId": "hypothesis-vs-evidence",
+      "question": "Does the answer clearly distinguish hypothesis-generating ideas from established evidence?",
+      "answerFormat": "yesNo",
+      "weight": 1,
+      "evaluationGuidance": "Conflating guideline recommendations with mechanistic evidence fails this question."
+    },
+    {
+      "questionId": "precision",
+      "question": "Does the answer use precise scientific language and avoid vague or generic AF topic phrasing?",
+      "answerFormat": "yesNo",
+      "weight": 1,
+      "evaluationGuidance": "Generic AF topics without specific rotor-mechanism focus fail."
+    },
+    {
+      "questionId": "grounding",
+      "question": "Are the topics grounded in or cross-checked against the cardiology-canon-v2 bookshelf, with source citations where evidence is claimed?",
+      "answerFormat": "yesNo",
+      "weight": 1,
+      "evaluationGuidance": "Claims of established evidence should cite indexed sources; ungrounded evidence claims fail."
+    }
+  ],
+  "passingCriteria": {
+    "minimumScore": 0.8,
+    "minimumPerQuestion": 0.6
+  },
+  "version": 1,
+  "createdAt": "2026-07-28T00:34:14.4403955+00:00",
+  "updatedAt": "2026-07-28T00:34:14.4403955+00:00",
+  "$schema": "2"
+}

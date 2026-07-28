@@ -1,0 +1,15 @@
+{
+  "outcomeId": "955dfd33ba004ae6bcb33784f2afbb0e",
+  "purposeId": "ad489857c985423295a68553ab72c8e0",
+  "title": "Content Coverage",
+  "description": "All provided PDFs are indexed and searchable, with no document silently missing from the corpus.",
+  "type": "measurement",
+  "verificationMode": "hybrid",
+  "status": "pending",
+  "taskIds": [
+    "5173c3d1-19d9-4221-bcbd-122909c9a859"
+  ],
+  "createdAt": "2026-07-09T02:09:22.486894+00:00",
+  "updatedAt": "2026-07-09T02:42:24.451222+00:00",
+  "$schema": "2"
+}

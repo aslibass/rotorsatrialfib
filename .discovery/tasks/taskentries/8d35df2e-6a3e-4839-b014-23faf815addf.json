@@ -1,0 +1,12 @@
+{
+  "$schema": "2",
+  "name": "8d35df2e-6a3e-4839-b014-23faf815addf",
+  "dxId": "DX-5",
+  "title": "Staying Current",
+  "description": "Configure auto-ingest for new PDFs and validate end-to-end workflow for keeping the knowledge base current.",
+  "status": "new",
+  "parentId": "99eae1ae-815b-480e-bae6-ba5d4cbfba2b",
+  "siblingOrder": 3,
+  "createdAt": "2026-07-09T02:41:50.7343315+00:00",
+  "lastModifiedAt": "2026-07-09T02:41:50.7343315+00:00"
+}

@@ -1,0 +1,12 @@
+{
+  "$schema": "2",
+  "name": "c3beb462-e501-4a19-9096-8af169b1ac05",
+  "dxId": "DX-4",
+  "title": "Synthesis Capability",
+  "description": "Validate the agent can synthesize and compare information across multiple documents \u2014 guidelines, trials, and consensus statements on the same topic.",
+  "status": "new",
+  "parentId": "99eae1ae-815b-480e-bae6-ba5d4cbfba2b",
+  "siblingOrder": 2,
+  "createdAt": "2026-07-09T02:41:47.191877+00:00",
+  "lastModifiedAt": "2026-07-09T02:41:47.191877+00:00"
+}

@@ -1,0 +1,27 @@
+{
+  "$schema": "2",
+  "name": "bb2a17a3-e7c2-46ce-8f32-daa0c02dfec1",
+  "dxId": "DX-22",
+  "title": "Write abstract: Phase-singularity vs activation-sequence mapping discordance",
+  "description": "Draft a structured research abstract for Topic 3 from evaluation/af-rotor-research-topics.md. Domain: mapping methodology / clinical EP. Reference FIRM clinical equipoise (2020 ESC AF, Narayan et al.). Distinguish established context from hypothesis. Use LaTeX $...$ for notation.",
+  "status": "executionDone",
+  "parentId": "b196a4c7-7cfc-4d02-9ecc-16038545b950",
+  "siblingOrder": 2,
+  "executionHistory": [
+    {
+      "createdAt": "2026-07-28T01:04:42.0651153+00:00",
+      "action": "status:New\u2192Executing",
+      "createdBy": "system",
+      "createdByType": "system"
+    },
+    {
+      "createdAt": "2026-07-28T01:05:47.0560304+00:00",
+      "action": "status:Executing\u2192ExecutionDone",
+      "createdBy": "system",
+      "createdByType": "system",
+      "summary": "Abstract 3 (phase-singularity vs activation mapping discordance) written to evaluation/af-rotor-abstracts.md."
+    }
+  ],
+  "createdAt": "2026-07-28T00:51:24.1414465+00:00",
+  "lastModifiedAt": "2026-07-28T01:05:47.0560304+00:00"
+}

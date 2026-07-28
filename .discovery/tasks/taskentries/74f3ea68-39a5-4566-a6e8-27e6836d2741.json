@@ -1,0 +1,21 @@
+{
+  "$schema": "2",
+  "name": "74f3ea68-39a5-4566-a6e8-27e6836d2741",
+  "dxId": "DX-19",
+  "title": "new research topics",
+  "description": "find 5 ne research topics for the role of rotors in the heart during atrial fribilation",
+  "status": "removed",
+  "parentId": "99eae1ae-815b-480e-bae6-ba5d4cbfba2b",
+  "siblingOrder": 5,
+  "executionHistory": [
+    {
+      "createdAt": "2026-07-28T00:34:32.8213262+00:00",
+      "action": "status:New\u2192Removed",
+      "createdBy": "system",
+      "createdByType": "system",
+      "summary": "Duplicate of DX-18 (identical rotors-in-AF research-topics request). Consolidated onto DX-18, which is now linked to the \u00275 source-grounded AF rotor research topics\u0027 outcome."
+    }
+  ],
+  "createdAt": "2026-07-28T00:26:30.4161673+00:00",
+  "lastModifiedAt": "2026-07-28T00:34:32.8213262+00:00"
+}

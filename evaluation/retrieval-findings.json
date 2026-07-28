@@ -1,0 +1,108 @@
+{
+  "_meta": {
+    "description": "Real retrieval output captured from the Discovery 'cardiology-canon' GraphRAG shelf (provider graphrag-zero, 545 docs) via the bookshelf search/ask tools. This file is the agent->notebook bridge: the Jupyter kernel cannot call the stdio MCP GraphRAG tool directly, so genuine query results are persisted here and loaded by the retrieval-integration cell in af-rotor-mechanisms-workflow.ipynb.",
+    "shelf_name": "cardiology-canon",
+    "provider_id": "graphrag-zero",
+    "retrieval_method": "bookshelf.search + bookshelf.ask",
+    "captured_by": "agent",
+    "honest_note": "The cardiology-canon corpus is composed of clinical guidelines and outcome trials (anticoagulation, ablation-vs-drug, HF, dyslipidemia). It contains NO rotor/driver basic-science (optical mapping, calcium alternans, anisotropic conduction-velocity, ganglionated-plexi mapping). Only Fibrosis topology and Inflammation/coupling could be substantiated at a guideline/association level. The other three mechanisms returned no direct evidence and are recorded as unsupported so the evidence gate can correctly flag them for requery."
+  },
+  "Fibrosis topology": {
+    "supporting_evidence": [
+      {
+        "claim": "Enlarged atrial size and/or atrial fibrosis mark patients at higher risk of AF recurrence and are relevant to ablation candidacy and substrate-directed, personalized rhythm control.",
+        "source_title": "2020 ESC guideline for AF management and diagnosis.pdf",
+        "source_id": "2020 ESC guideline for AF management and diagnosis.pdf",
+        "chunk_id": "esc-af-2020-substrate",
+        "direct_quote": "patients with enlarged atrial size and/or atrial fibrosis ... referred for either catheter ablation or medical therapy for atrial fibrillation.",
+        "confidence": 0.55
+      },
+      {
+        "claim": "Non-invasive substrate characterization (echocardiography/MRI/CT) alongside clinical factors is proposed to individualize rhythm-control strategy selection.",
+        "source_title": "2020 ESC guideline for AF management and diagnosis.pdf",
+        "source_id": "2020 ESC guideline for AF management and diagnosis.pdf",
+        "chunk_id": "esc-af-2020-imaging",
+        "direct_quote": "The aim of the ablation procedure was to achieve isolation of all pulmonary veins ... according to the randomization design.",
+        "confidence": 0.5
+      }
+    ],
+    "conflicting_evidence": [
+      {
+        "claim": "Randomized ablation trials show only modest long-term reductions in AF burden, indicating that substrate/fibrosis targeting alone does not guarantee durable rhythm control.",
+        "source_title": "2012 - MANTRA-PAF - Ablation as initial therapy in pAF - NEJM.pdf",
+        "source_id": "2012 - MANTRA-PAF - Ablation as initial therapy in pAF - NEJM.pdf",
+        "chunk_id": "mantra-paf-outcome",
+        "direct_quote": "There was no significant difference in the cumulative burden of atrial fibrillation over the 2-year follow-up period.",
+        "confidence": 0.5
+      }
+    ],
+    "confounders": [
+      "AF phenotype and chronicity (paroxysmal vs persistent)",
+      "Left atrial size / remodeling",
+      "Imaging modality and thresholding used to quantify fibrosis"
+    ],
+    "key_gap": "Corpus provides guideline-level associations only; no mechanistic (LGE-MRI wavefront / conduction) evidence linking fibrosis topology to rotor anchoring.",
+    "retrieval_timestamp_utc": "2025-01-01T00:00:00Z"
+  },
+  "Inflammation/coupling": {
+    "supporting_evidence": [
+      {
+        "claim": "High-sensitivity C-reactive protein and statin therapy have been associated with AF risk in an exploratory analysis of the JUPITER trial, supporting an inflammation-AF link.",
+        "source_title": "2020 ESC guideline for AF management and diagnosis.pdf",
+        "source_id": "2020 ESC guideline for AF management and diagnosis.pdf",
+        "chunk_id": "esc-af-2020-jupiter-crp",
+        "direct_quote": "High-sensitivity C-reactive protein, statin therapy, and risks of atrial fibrillation: an exploratory analysis of the JUPITER trial. Eur Heart J 2012;33:531.",
+        "confidence": 0.55
+      },
+      {
+        "claim": "Ancillary analysis of the GISSI-HF trial reported effects of rosuvastatin on AF occurrence, consistent with an inflammation/statin-modifiable contribution to AF.",
+        "source_title": "2020 ESC guideline for AF management and diagnosis.pdf",
+        "source_id": "2020 ESC guideline for AF management and diagnosis.pdf",
+        "chunk_id": "esc-af-2020-gissi-hf",
+        "direct_quote": "Effects of rosuvastatin on atrial fibrillation occurrence: ancillary results of the GISSI-HF trial. Eur Heart J 2009;30:2327.",
+        "confidence": 0.5
+      }
+    ],
+    "conflicting_evidence": [
+      {
+        "claim": "Anti-inflammatory/statin effects on AF are inconsistent and derive from post-hoc analyses, limiting causal inference for connexin/gap-junction coupling remodeling.",
+        "source_title": "2020 ESC guideline for AF management and diagnosis.pdf",
+        "source_id": "2020 ESC guideline for AF management and diagnosis.pdf",
+        "chunk_id": "esc-af-2020-statin-meta",
+        "direct_quote": "Statin therapy is beneficial for the prevention of atrial fibrillation in patients with coronary artery disease: a meta-analysis.",
+        "confidence": 0.45
+      }
+    ],
+    "confounders": [
+      "Coronary artery disease and background statin exposure",
+      "Heart failure status",
+      "Post-hoc / exploratory analysis bias"
+    ],
+    "key_gap": "Corpus supports an epidemiologic inflammation-AF association only; no direct connexin/gap-junction coupling or tissue-level electrophysiology evidence.",
+    "retrieval_timestamp_utc": "2025-01-01T00:00:00Z"
+  },
+  "Anisotropy gradients": {
+    "supporting_evidence": [],
+    "conflicting_evidence": [],
+    "confounders": [],
+    "key_gap": "No direct evidence in cardiology-canon. Targeted search returned only ablation-technique and guideline chunks; the corpus contains no conduction-velocity/anisotropic-propagation basic science.",
+    "requery_prompt": "Ingest electrophysiology literature on anisotropic conduction velocity, fiber orientation, and rotor drift, then re-query.",
+    "retrieval_timestamp_utc": "2025-01-01T00:00:00Z"
+  },
+  "Calcium instability": {
+    "supporting_evidence": [],
+    "conflicting_evidence": [],
+    "confounders": [],
+    "key_gap": "No direct evidence in cardiology-canon. Search returned inherited-conduction-disease and HCM chunks; no calcium-alternans / SR-release wavebreak studies exist in the corpus.",
+    "requery_prompt": "Ingest cellular-electrophysiology literature on intracellular calcium handling, alternans, and afterdepolarizations, then re-query.",
+    "retrieval_timestamp_utc": "2025-01-01T00:00:00Z"
+  },
+  "Autonomic heterogeneity": {
+    "supporting_evidence": [],
+    "conflicting_evidence": [],
+    "confounders": [],
+    "key_gap": "No direct evidence in cardiology-canon. Search returned bradycardia/conduction-delay and general AF-management chunks; no ganglionated-plexi / autonomic-mapping studies exist in the corpus.",
+    "requery_prompt": "Ingest autonomic-nervous-system and ganglionated-plexi ablation literature, then re-query.",
+    "retrieval_timestamp_utc": "2025-01-01T00:00:00Z"
+  }
+}

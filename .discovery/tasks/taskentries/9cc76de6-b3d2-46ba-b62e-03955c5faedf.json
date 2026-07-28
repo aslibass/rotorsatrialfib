@@ -1,0 +1,12 @@
+{
+  "$schema": "2",
+  "name": "9cc76de6-b3d2-46ba-b62e-03955c5faedf",
+  "dxId": "DX-11",
+  "title": "Generate complete document index by category",
+  "description": "Produce a structured index listing document title, year, category, and ingest status for all 508 PDFs.",
+  "status": "new",
+  "parentId": "5173c3d1-19d9-4221-bcbd-122909c9a859",
+  "siblingOrder": 2,
+  "createdAt": "2026-07-09T02:42:02.36539+00:00",
+  "lastModifiedAt": "2026-07-09T02:42:02.36539+00:00"
+}

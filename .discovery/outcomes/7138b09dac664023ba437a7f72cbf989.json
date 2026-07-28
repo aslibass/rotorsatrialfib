@@ -1,0 +1,15 @@
+{
+  "outcomeId": "7138b09dac664023ba437a7f72cbf989",
+  "purposeId": "ad489857c985423295a68553ab72c8e0",
+  "title": "Synthesis Capability",
+  "description": "The agent can synthesize information across multiple documents — comparing guidelines, summarizing a topic across several papers, or identifying consensus and conflicts.",
+  "type": "capability",
+  "verificationMode": "hybrid",
+  "status": "pending",
+  "taskIds": [
+    "c3beb462-e501-4a19-9096-8af169b1ac05"
+  ],
+  "createdAt": "2026-07-09T02:09:25.6699357+00:00",
+  "updatedAt": "2026-07-09T02:42:28.3569263+00:00",
+  "$schema": "2"
+}

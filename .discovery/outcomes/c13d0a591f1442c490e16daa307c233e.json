@@ -1,0 +1,15 @@
+{
+  "outcomeId": "c13d0a591f1442c490e16daa307c233e",
+  "purposeId": "ad489857c985423295a68553ab72c8e0",
+  "title": "Knowledge Retrieval",
+  "description": "Any clinical question (drug, diagnosis, guideline) can be answered by querying the knowledge base with a natural language prompt, returning relevant passages from the ingested PDFs.",
+  "type": "capability",
+  "verificationMode": "hybrid",
+  "status": "pending",
+  "taskIds": [
+    "60db0288-8d40-40bb-b8e7-48a97b898a85"
+  ],
+  "createdAt": "2026-07-09T02:09:19.4130321+00:00",
+  "updatedAt": "2026-07-09T02:42:20.5949891+00:00",
+  "$schema": "2"
+}

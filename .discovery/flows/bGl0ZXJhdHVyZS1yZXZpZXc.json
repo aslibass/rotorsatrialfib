@@ -1,0 +1,145 @@
+{
+  "flowId": "literature-review",
+  "name": "Literature Review",
+  "description": "Search, extract, and synthesize research papers on a specified topic. Engine-assisted search and extraction with human review at the end.",
+  "category": "research",
+  "version": "1.0.0",
+  "parameters": [
+    {
+      "name": "topic",
+      "type": "string",
+      "description": "The research topic to review (e.g., \u0027CRISPR gene editing\u0027, \u0027transformer architectures\u0027).",
+      "required": true
+    },
+    {
+      "name": "maxPapers",
+      "type": "number",
+      "description": "Maximum number of papers to include in the review.",
+      "required": false,
+      "default": 10
+    },
+    {
+      "name": "focus",
+      "type": "choice",
+      "description": "Primary focus area for the review.",
+      "required": false,
+      "default": "methods",
+      "choices": [
+        "methods",
+        "results",
+        "theory",
+        "applications"
+      ]
+    }
+  ],
+  "taskTemplates": [
+    {
+      "templateNodeId": "search",
+      "title": "Search for papers on {{topic}}",
+      "description": "Find up to {{maxPapers}} relevant papers using Bookshelf search and external databases.",
+      "acceptanceCriteria": [
+        "At least 5 relevant papers identified",
+        "Papers span multiple research groups",
+        "Date range covers last 5 years"
+      ],
+      "labels": [
+        "research",
+        "automated"
+      ],
+      "assignmentHint": "engine:doc-cracker",
+      "estimatedEffort": "30m"
+    },
+    {
+      "templateNodeId": "extract",
+      "title": "Extract key findings from papers",
+      "description": "For each paper, extract: main claims, methodology, key results, and limitations.",
+      "acceptanceCriteria": [
+        "Each paper has a structured summary",
+        "Key numerical results captured",
+        "Methodology described for reproducibility"
+      ],
+      "labels": [
+        "research",
+        "automated"
+      ],
+      "assignmentHint": "engine:doc-cracker",
+      "estimatedEffort": "1h"
+    },
+    {
+      "templateNodeId": "contradictions",
+      "title": "Identify contradictions and gaps",
+      "description": "Cross-reference findings to identify contradictory claims, methodological disagreements, and research gaps.",
+      "acceptanceCriteria": [
+        "Contradictions documented with citations",
+        "Research gaps identified",
+        "Areas of consensus highlighted"
+      ],
+      "labels": [
+        "research",
+        "analysis"
+      ],
+      "assignmentHint": "copilot",
+      "estimatedEffort": "45m"
+    },
+    {
+      "templateNodeId": "synthesize",
+      "title": "Draft synthesis on {{topic}}",
+      "description": "Write a cohesive synthesis document covering the state of the art, focusing on {{focus}}.",
+      "acceptanceCriteria": [
+        "Synthesis covers all reviewed papers",
+        "Clear narrative structure",
+        "Proper citations throughout",
+        "Recommendations for future work included"
+      ],
+      "labels": [
+        "research",
+        "writing"
+      ],
+      "assignmentHint": "copilot",
+      "estimatedEffort": "2h"
+    },
+    {
+      "templateNodeId": "review",
+      "title": "Human review and finalize",
+      "description": "Expert reviews the synthesis for accuracy, completeness, and scientific rigor. Makes final edits.",
+      "acceptanceCriteria": [
+        "All claims verified by expert",
+        "No factual errors",
+        "Writing quality meets publication standards",
+        "Final document approved"
+      ],
+      "labels": [
+        "research",
+        "human-review"
+      ],
+      "assignmentHint": "human",
+      "estimatedEffort": "1h"
+    }
+  ],
+  "edgeTemplates": [
+    {
+      "from": "search",
+      "to": "extract",
+      "type": "dependency"
+    },
+    {
+      "from": "extract",
+      "to": "contradictions",
+      "type": "dependency"
+    },
+    {
+      "from": "contradictions",
+      "to": "synthesize",
+      "type": "dependency"
+    },
+    {
+      "from": "synthesize",
+      "to": "review",
+      "type": "dependency"
+    }
+  ],
+  "engineBinding": {
+    "definitionId": "doc-cracker",
+    "triggerOn": "on-ready-tasks"
+  }
+}

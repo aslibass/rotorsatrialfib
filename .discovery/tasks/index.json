@@ -1,0 +1,213 @@
+{
+  "tasks": [
+    {
+      "taskId": "01183bb7-f22c-4b5f-9156-d630fb89f5e3",
+      "dxId": "DX-12",
+      "title": "Test ACC vs ESC guideline comparison",
+      "status": "new",
+      "parentId": "c3beb462-e501-4a19-9096-8af169b1ac05",
+      "updatedAt": "2026-07-09T02:42:08.9954714+00:00"
+    },
+    {
+      "taskId": "07145a22-7d97-4714-a5f4-25d4a4c040fc",
+      "dxId": "DX-6",
+      "title": "Verify all 5 folders are fully indexed and searchable",
+      "status": "executionDone",
+      "parentId": "60db0288-8d40-40bb-b8e7-48a97b898a85",
+      "updatedAt": "2026-07-09T02:48:47.7257128+00:00"
+    },
+    {
+      "taskId": "09a063a5-9b1c-4982-acfc-b94de0fc7ebb",
+      "dxId": "DX-8",
+      "title": "Document effective query patterns",
+      "status": "executionDone",
+      "parentId": "60db0288-8d40-40bb-b8e7-48a97b898a85",
+      "updatedAt": "2026-07-09T03:03:51.5786626+00:00"
+    },
+    {
+      "taskId": "1fdf5617-12bd-4b00-bafd-3e2cca111b0c",
+      "dxId": "DX-13",
+      "title": "Validate multi-paper topic summarization",
+      "status": "new",
+      "parentId": "c3beb462-e501-4a19-9096-8af169b1ac05",
+      "updatedAt": "2026-07-09T02:42:08.997323+00:00"
+    },
+    {
+      "taskId": "209bb7af-dd96-4260-9b34-537fe5872ff4",
+      "dxId": "DX-17",
+      "title": "Document the workflow for adding new literature",
+      "status": "new",
+      "parentId": "8d35df2e-6a3e-4839-b014-23faf815addf",
+      "updatedAt": "2026-07-09T02:42:15.174216+00:00"
+    },
+    {
+      "taskId": "22e88fb6-8b15-4caa-8099-cb40c8066130",
+      "dxId": "DX-14",
+      "title": "Explore consensus and conflict detection",
+      "status": "new",
+      "parentId": "c3beb462-e501-4a19-9096-8af169b1ac05",
+      "updatedAt": "2026-07-09T02:42:08.9989489+00:00"
+    },
+    {
+      "taskId": "5173c3d1-19d9-4221-bcbd-122909c9a859",
+      "dxId": "DX-3",
+      "title": "Content Coverage",
+      "status": "new",
+      "parentId": "99eae1ae-815b-480e-bae6-ba5d4cbfba2b",
+      "updatedAt": "2026-07-09T02:41:43.1555924+00:00"
+    },
+    {
+      "taskId": "5bd00f0c-b352-4016-9eb2-07deb166fe73",
+      "dxId": "DX-15",
+      "title": "Configure auto-ingest directory watch",
+      "status": "new",
+      "parentId": "8d35df2e-6a3e-4839-b014-23faf815addf",
+      "updatedAt": "2026-07-09T02:42:15.1693257+00:00"
+    },
+    {
+      "taskId": "60db0288-8d40-40bb-b8e7-48a97b898a85",
+      "dxId": "DX-2",
+      "title": "Knowledge Retrieval",
+      "status": "new",
+      "parentId": "99eae1ae-815b-480e-bae6-ba5d4cbfba2b",
+      "updatedAt": "2026-07-09T02:41:38.2880942+00:00"
+    },
+    {
+      "taskId": "73603500-0877-437a-8482-fa98f5cc3260",
+      "dxId": "DX-24",
+      "title": "Write abstract: Rotor-core thermal heterogeneity during RF ablation",
+      "status": "executionDone",
+      "parentId": "b196a4c7-7cfc-4d02-9ecc-16038545b950",
+      "updatedAt": "2026-07-28T01:05:47.1229716+00:00"
+    },
+    {
+      "taskId": "74f3ea68-39a5-4566-a6e8-27e6836d2741",
+      "dxId": "DX-19",
+      "title": "new research topics",
+      "status": "removed",
+      "parentId": "99eae1ae-815b-480e-bae6-ba5d4cbfba2b",
+      "updatedAt": "2026-07-28T00:34:32.8213262+00:00"
+    },
+    {
+      "taskId": "762bbe02-9a36-4d0e-9f55-4e38efac0034",
+      "dxId": "DX-9",
+      "title": "Audit ingest state and identify failures",
+      "status": "executionDone",
+      "parentId": "5173c3d1-19d9-4221-bcbd-122909c9a859",
+      "updatedAt": "2026-07-09T02:49:16.0869601+00:00"
+    },
+    {
+      "taskId": "77832f8c-a4b7-4d21-b5e6-39be724dc00a",
+      "dxId": "DX-23",
+      "title": "Write abstract: Connexin-43 lateralization and rotor drift dynamics",
+      "status": "executionDone",
+      "parentId": "b196a4c7-7cfc-4d02-9ecc-16038545b950",
+      "updatedAt": "2026-07-28T01:05:47.0902704+00:00"
+    },
+    {
+      "taskId": "7f444939-824f-4007-8906-a9dc72417b8a",
+      "dxId": "DX-21",
+      "title": "Write abstract: I_K,ACh-mediated APD shortening in vagal paroxysmal AF",
+      "status": "executionDone",
+      "parentId": "b196a4c7-7cfc-4d02-9ecc-16038545b950",
+      "updatedAt": "2026-07-28T01:05:47.0231936+00:00"
+    },
+    {
+      "taskId": "8d35df2e-6a3e-4839-b014-23faf815addf",
+      "dxId": "DX-5",
+      "title": "Staying Current",
+      "status": "new",
+      "parentId": "99eae1ae-815b-480e-bae6-ba5d4cbfba2b",
+      "updatedAt": "2026-07-09T02:41:50.7343315+00:00"
+    },
+    {
+      "taskId": "9865843a-c98f-4175-a833-aa5ff2a8b4e3",
+      "dxId": "DX-26",
+      "title": "Revise AF rotor abstracts to v2 (resolve review-panel findings)",
+      "status": "executing",
+      "parentId": "b196a4c7-7cfc-4d02-9ecc-16038545b950",
+      "assignedToType": "Agent",
+      "updatedAt": "2026-07-28T02:02:32.4536622+00:00"
+    },
+    {
+      "taskId": "99eae1ae-815b-480e-bae6-ba5d4cbfba2b",
+      "dxId": "DX-1",
+      "title": "Cardiology Canon 2026",
+      "status": "new",
+      "updatedAt": "2026-07-09T02:41:34.6426295+00:00"
+    },
+    {
+      "taskId": "9cc76de6-b3d2-46ba-b62e-03955c5faedf",
+      "dxId": "DX-11",
+      "title": "Generate complete document index by category",
+      "status": "new",
+      "parentId": "5173c3d1-19d9-4221-bcbd-122909c9a859",
+      "updatedAt": "2026-07-09T02:42:02.36539+00:00"
+    },
+    {
+      "taskId": "b196a4c7-7cfc-4d02-9ecc-16038545b950",
+      "dxId": "DX-18",
+      "title": "come up with 5 new research topics for the role of rotors in the heart during artrial fribilation",
+      "status": "complete",
+      "parentId": "99eae1ae-815b-480e-bae6-ba5d4cbfba2b",
+      "updatedAt": "2026-07-28T00:45:47.3344792+00:00"
+    },
+    {
+      "taskId": "bb2a17a3-e7c2-46ce-8f32-daa0c02dfec1",
+      "dxId": "DX-22",
+      "title": "Write abstract: Phase-singularity vs activation-sequence mapping discordance",
+      "status": "executionDone",
+      "parentId": "b196a4c7-7cfc-4d02-9ecc-16038545b950",
+      "updatedAt": "2026-07-28T01:05:47.0560304+00:00"
+    },
+    {
+      "taskId": "c3beb462-e501-4a19-9096-8af169b1ac05",
+      "dxId": "DX-4",
+      "title": "Synthesis Capability",
+      "status": "new",
+      "parentId": "99eae1ae-815b-480e-bae6-ba5d4cbfba2b",
+      "updatedAt": "2026-07-09T02:41:47.191877+00:00"
+    },
+    {
+      "taskId": "c91a07c9-db79-4da7-b809-0c7d76222c3a",
+      "dxId": "DX-20",
+      "title": "Write abstract: Fibrosis-dependent rotor anchoring (collagen-density gradients)",
+      "status": "executionDone",
+      "parentId": "b196a4c7-7cfc-4d02-9ecc-16038545b950",
+      "updatedAt": "2026-07-28T01:05:46.9915205+00:00"
+    },
+    {
+      "taskId": "cebfd513-ea15-4f47-90bf-ccb938bd6c06",
+      "dxId": "DX-7",
+      "title": "Test retrieval with sample clinical questions",
+      "status": "executionDone",
+      "parentId": "60db0288-8d40-40bb-b8e7-48a97b898a85",
+      "updatedAt": "2026-07-09T03:03:41.4225406+00:00"
+    },
+    {
+      "taskId": "f0857d49-f043-4fa1-8f99-1b1ba2c32034",
+      "dxId": "DX-10",
+      "title": "Re-ingest any failed or missing documents",
+      "status": "onHold",
+      "parentId": "5173c3d1-19d9-4221-bcbd-122909c9a859",
+      "updatedAt": "2026-07-09T03:03:10.8431733+00:00"
+    },
+    {
+      "taskId": "f32b3fff-8648-442b-8e72-081e22efe5d9",
+      "dxId": "DX-25",
+      "title": "Peer-review abstracts via senior-cardiologist-critic agent",
+      "status": "complete",
+      "parentId": "b196a4c7-7cfc-4d02-9ecc-16038545b950",
+      "updatedAt": "2026-07-28T01:35:01.6007+00:00"
+    },
+    {
+      "taskId": "f59ef302-0b48-4947-962a-b858d4245557",
+      "dxId": "DX-16",
+      "title": "Validate incremental ingest end-to-end",
+      "status": "new",
+      "parentId": "8d35df2e-6a3e-4839-b014-23faf815addf",
+      "updatedAt": "2026-07-09T02:42:15.1725305+00:00"
+    }
+  ],
+  "rebuiltAt": "2026-07-28T02:02:54.8936328+00:00"
+}

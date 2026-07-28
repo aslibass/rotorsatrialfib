@@ -1,0 +1,127 @@
+{
+  "flowId": "experiment-pipeline",
+  "name": "Experiment Pipeline",
+  "description": "Default experiment workflow: execute, critique, conclude, and plan.",
+  "category": "experiment",
+  "version": "1.0.0",
+  "parameters": [
+    {
+      "name": "experimentId",
+      "type": "string",
+      "description": "Experiment identifier (for example DX-42).",
+      "required": true
+    }
+  ],
+  "taskTemplates": [
+    {
+      "templateNodeId": "execute",
+      "title": "Pipeline: execute",
+      "description": "Execute the experiment described in task {{experimentId}}",
+      "acceptanceCriteria": [
+        "Execution artifacts are produced for {{experimentId}}",
+        "Execution observations are captured in task updates"
+      ],
+      "labels": [
+        "role:experiment-stage",
+        "experiment:pipeline",
+        "stage:execute",
+        "experimentId:{{experimentId}}"
+      ],
+      "assignmentHint": "agent:catalog/experiment-execute",
+      "estimatedEffort": "1h",
+      "waitPolicy": {
+        "checkAfterMinutes": 60,
+        "continueWaitingIfActive": true,
+        "maxWaitMinutes": 480
+      }
+    },
+    {
+      "templateNodeId": "critique",
+      "title": "Pipeline: critique",
+      "description": "Critique the experiment in task {{experimentId}}",
+      "acceptanceCriteria": [
+        "Critique highlights strengths, risks, and evidence gaps",
+        "Follow-up adjustments are suggested"
+      ],
+      "labels": [
+        "role:experiment-stage",
+        "experiment:pipeline",
+        "stage:critique",
+        "experimentId:{{experimentId}}"
+      ],
+      "assignmentHint": "agent:catalog/experiment-critique",
+      "estimatedEffort": "45m",
+      "waitPolicy": {
+        "checkAfterMinutes": 45,
+        "continueWaitingIfActive": true,
+        "maxWaitMinutes": 240
+      }
+    },
+    {
+      "templateNodeId": "conclude",
+      "title": "Pipeline: conclude",
+      "description": "Conclude experiment {{experimentId}}. Synthesize results and critique, update records, and call experiments.conclude.",
+      "acceptanceCriteria": [
+        "Conclusion captures outcome and confidence",
+        "experiments.conclude is called with a structured verdict"
+      ],
+      "labels": [
+        "role:experiment-stage",
+        "experiment:pipeline",
+        "stage:conclude",
+        "experimentId:{{experimentId}}"
+      ],
+      "assignmentHint": "agent:catalog/experiment-conclude",
+      "estimatedEffort": "45m",
+      "waitPolicy": {
+        "checkAfterMinutes": 45,
+        "continueWaitingIfActive": true,
+        "maxWaitMinutes": 240
+      }
+    },
+    {
+      "templateNodeId": "plan",
+      "title": "Pipeline: plan",
+      "description": "Plan the next experiment based on the critique and conclusion of task {{experimentId}}",
+      "acceptanceCriteria": [
+        "Next experiment plan is proposed with clear hypothesis",
+        "Plan is aligned to campaign outcomes"
+      ],
+      "labels": [
+        "role:experiment-stage",
+        "experiment:pipeline",
+        "stage:plan",
+        "experimentId:{{experimentId}}"
+      ],
+      "assignmentHint": "agent:catalog/experiment-plan",
+      "estimatedEffort": "30m",
+      "waitPolicy": {
+        "checkAfterMinutes": 30,
+        "continueWaitingIfActive": true,
+        "maxWaitMinutes": 180
+      }
+    }
+  ],
+  "edgeTemplates": [
+    {
+      "from": "execute",
+      "to": "critique",
+      "type": "dependency"
+    },
+    {
+      "from": "critique",
+      "to": "conclude",
+      "type": "dependency"
+    },
+    {
+      "from": "conclude",
+      "to": "plan",
+      "type": "dependency"
+    }
+  ],
+  "waitPolicy": {
+    "checkAfterMinutes": 60,
+    "continueWaitingIfActive": true,
+    "maxWaitMinutes": 480
+  }
+}

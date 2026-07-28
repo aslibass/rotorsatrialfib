@@ -1,0 +1,25 @@
+{
+  "$schema": "2",
+  "name": "9865843a-c98f-4175-a833-aa5ff2a8b4e3",
+  "dxId": "DX-26",
+  "title": "Revise AF rotor abstracts to v2 (resolve review-panel findings)",
+  "description": "Mission Control orchestration: delegate af-abstract-writer to produce evaluation/af-rotor-abstracts-v2.md resolving the citation-audit, methodology, ethics, and senior-critic findings on af-rotor-abstracts.md (DX-20..DX-24). Then senior-cardiologist-critic reviews v2 -\u003E af-rotor-abstracts-v2-critique.md (Accept/Minor/Major); scientific-copy-editor polishes v2 -\u003E af-rotor-copyedit-report.md. Max 2 write-\u003Ecritique rounds; stop at Accept/Minor revision.",
+  "status": "executing",
+  "parentId": "b196a4c7-7cfc-4d02-9ecc-16038545b950",
+  "siblingOrder": 6,
+  "assignedTo": {
+    "id": "af-abstract-writer",
+    "type": "agent"
+  },
+  "executionHistory": [
+    {
+      "createdAt": "2026-07-28T02:02:32.4536622+00:00",
+      "action": "status:New\u2192Executing",
+      "createdBy": "system",
+      "createdByType": "system",
+      "summary": "Delegated af-abstract-writer (background) to produce af-rotor-abstracts-v2.md with all required citation/methodology/ethics fixes including the A5 circular-perfusion fatal-flaw fix."
+    }
+  ],
+  "createdAt": "2026-07-28T02:02:25.0141364+00:00",
+  "lastModifiedAt": "2026-07-28T02:02:32.4536622+00:00"
+}

@@ -1,0 +1,12 @@
+{
+  "$schema": "2",
+  "name": "1fdf5617-12bd-4b00-bafd-3e2cca111b0c",
+  "dxId": "DX-13",
+  "title": "Validate multi-paper topic summarization",
+  "description": "Select a landmark topic (e.g. AF management) and ask the agent to synthesize a summary across multiple trial and guideline documents.",
+  "status": "new",
+  "parentId": "c3beb462-e501-4a19-9096-8af169b1ac05",
+  "siblingOrder": 1,
+  "createdAt": "2026-07-09T02:42:08.997323+00:00",
+  "lastModifiedAt": "2026-07-09T02:42:08.997323+00:00"
+}

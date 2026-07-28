@@ -1,0 +1,12 @@
+{
+  "$schema": "2",
+  "name": "209bb7af-dd96-4260-9b34-537fe5872ff4",
+  "dxId": "DX-17",
+  "title": "Document the workflow for adding new literature",
+  "description": "Write a brief guide (1 page) on how to add new literature and what to expect from the system.",
+  "status": "new",
+  "parentId": "8d35df2e-6a3e-4839-b014-23faf815addf",
+  "siblingOrder": 2,
+  "createdAt": "2026-07-09T02:42:15.174216+00:00",
+  "lastModifiedAt": "2026-07-09T02:42:15.174216+00:00"
+}

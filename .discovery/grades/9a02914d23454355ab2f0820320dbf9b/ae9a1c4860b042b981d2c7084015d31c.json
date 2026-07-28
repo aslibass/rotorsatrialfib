@@ -1,0 +1,48 @@
+{
+  "gradeId": "ae9a1c4860b042b981d2c7084015d31c",
+  "outcomeId": "9a02914d23454355ab2f0820320dbf9b",
+  "rubricId": "9d6b7eeb2a7c43ca8da4fa8faadfaa89",
+  "graderId": "submit",
+  "taskId": "DX-18",
+  "artifactRef": "evaluation/af-rotor-research-topics.md",
+  "questionScores": [
+    {
+      "questionId": "count",
+      "normalizedScore": 1,
+      "reasoning": "Exactly 5 distinct, non-overlapping topic titles are present, each addressing a different mechanistic aspect of AF rotor research."
+    },
+    {
+      "questionId": "rationale",
+      "normalizedScore": 1,
+      "reasoning": "Each topic includes a Rationale section with pathophysiology-grounded explanation."
+    },
+    {
+      "questionId": "domain-span",
+      "normalizedScore": 1,
+      "reasoning": "Five distinct mechanistic domains covered: fibrosis/structural substrate, ion-channel EP/autonomic modulation, mapping methodology, gap-junction biology, and ablation biophysics."
+    },
+    {
+      "questionId": "hypothesis-vs-evidence",
+      "normalizedScore": 1,
+      "reasoning": "Each topic has an explicit Status field marking it as hypothesis-generating or mixed. A dedicated summary section clearly separates established evidence from novel hypothesis."
+    },
+    {
+      "questionId": "precision",
+      "normalizedScore": 1,
+      "reasoning": "Uses precise scientific terminology: IK,ACh, Cx43 lateralization, phase-singularity algorithms, wavelength equation, anisotropy ratio, topological defects, transmural lesion formation."
+    },
+    {
+      "questionId": "grounding",
+      "normalizedScore": 1,
+      "reasoning": "Topics grounded in cardiology-canon-v2 bookshelf with specific citations: 2017 AHA/ACC SCD guideline (S3.4-2, S3.4-3), 2020 ESC AF guideline (refs 709, 711), 2018 ACC/AHA bradycardia guideline (S5.1-1). Transparently states what the bookshelf does NOT contain."
+    }
+  ],
+  "compositeScore": 1,
+  "passed": true,
+  "reasoning": "All 6 rubric questions pass. The artifact presents exactly 5 distinct research topics spanning 5 mechanistic domains, each with pathophysiology-grounded rationales, precise scientific language, clear hypothesis-vs-evidence distinctions, and explicit bookshelf citations with transparent acknowledgment of evidence gaps.",
+  "suggestions": [
+    "Consider adding specific DOI references for cited guideline sections to further strengthen traceability."
+  ],
+  "gradedAt": "2026-07-28T00:45:39.6572853+00:00",
+  "gradedBy": "agentic-grader"
+}

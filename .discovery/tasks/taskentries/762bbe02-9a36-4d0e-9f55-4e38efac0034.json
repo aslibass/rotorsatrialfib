@@ -1,0 +1,28 @@
+{
+  "$schema": "2",
+  "name": "762bbe02-9a36-4d0e-9f55-4e38efac0034",
+  "dxId": "DX-9",
+  "title": "Audit ingest state and identify failures",
+  "description": "Cross-reference extracted_content file count against total PDF count. Identify any PDFs that failed to extract.",
+  "status": "executionDone",
+  "parentId": "5173c3d1-19d9-4221-bcbd-122909c9a859",
+  "siblingOrder": 0,
+  "executionHistory": [
+    {
+      "createdAt": "2026-07-09T02:48:38.4003312+00:00",
+      "action": "status:New\u2192Executing",
+      "createdBy": "system",
+      "createdByType": "system",
+      "summary": "Starting ingest audit to identify why only 80/508 PDFs are indexed and to locate missing content sources."
+    },
+    {
+      "createdAt": "2026-07-09T02:49:16.0869601+00:00",
+      "action": "status:Executing\u2192ExecutionDone",
+      "createdBy": "system",
+      "createdByType": "system",
+      "summary": "Ingest audit complete: latest run ingested only 74 sources from \u0027ACC Expert Consensus statement 2000-2023\u0027 with status=resolved and no source errors. Root cause of low coverage is missing source folders in ingest scope, not extraction failure."
+    }
+  ],
+  "createdAt": "2026-07-09T02:42:02.3611615+00:00",
+  "lastModifiedAt": "2026-07-09T02:49:16.0869601+00:00"
+}

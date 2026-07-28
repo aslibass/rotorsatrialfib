@@ -1,0 +1,12 @@
+{
+  "$schema": "2",
+  "name": "01183bb7-f22c-4b5f-9156-d630fb89f5e3",
+  "dxId": "DX-12",
+  "title": "Test ACC vs ESC guideline comparison",
+  "description": "Query both ACC and ESC guidelines on the same topic (e.g. heart failure, atrial fibrillation) and compare recommendations side by side.",
+  "status": "new",
+  "parentId": "c3beb462-e501-4a19-9096-8af169b1ac05",
+  "siblingOrder": 0,
+  "createdAt": "2026-07-09T02:42:08.9954714+00:00",
+  "lastModifiedAt": "2026-07-09T02:42:08.9954714+00:00"
+}

@@ -1,0 +1,151 @@
+{
+  "flowId": "experiment-protocol",
+  "name": "Experiment Protocol",
+  "description": "Structured experimental workflow from hypothesis through reporting. Human-driven execution with engine-assisted analysis.",
+  "category": "lab",
+  "version": "1.0.0",
+  "parameters": [
+    {
+      "name": "hypothesis",
+      "type": "string",
+      "description": "The hypothesis to test (e.g., \u0027Compound X inhibits enzyme Y at 10\u03BCM\u0027).",
+      "required": true
+    },
+    {
+      "name": "methodology",
+      "type": "choice",
+      "description": "Primary experimental methodology.",
+      "required": false,
+      "default": "quantitative",
+      "choices": [
+        "quantitative",
+        "qualitative",
+        "mixed-methods",
+        "computational"
+      ]
+    },
+    {
+      "name": "sampleSize",
+      "type": "number",
+      "description": "Target sample size for the experiment.",
+      "required": false,
+      "default": 30
+    }
+  ],
+  "taskTemplates": [
+    {
+      "templateNodeId": "hypothesis",
+      "title": "Define hypothesis: {{hypothesis}}",
+      "description": "Formalize the hypothesis, identify variables (independent, dependent, controlled), and state expected outcomes.",
+      "acceptanceCriteria": [
+        "Hypothesis clearly stated in testable form",
+        "Variables identified and operationalized",
+        "Null hypothesis defined",
+        "Expected effect size estimated"
+      ],
+      "labels": [
+        "lab",
+        "planning"
+      ],
+      "assignmentHint": "human",
+      "estimatedEffort": "1h"
+    },
+    {
+      "templateNodeId": "design",
+      "title": "Design experiment for {{hypothesis}}",
+      "description": "Create experimental protocol using {{methodology}} approach with n={{sampleSize}}. Include controls, randomization, and blinding.",
+      "acceptanceCriteria": [
+        "Protocol document completed",
+        "Controls identified",
+        "Statistical power analysis done",
+        "Materials and equipment listed",
+        "Safety considerations addressed"
+      ],
+      "labels": [
+        "lab",
+        "planning"
+      ],
+      "assignmentHint": "copilot",
+      "estimatedEffort": "2h"
+    },
+    {
+      "templateNodeId": "execute",
+      "title": "Execute experiment",
+      "description": "Run the experiment following the protocol. Record all observations, deviations, and raw data.",
+      "acceptanceCriteria": [
+        "All samples processed per protocol",
+        "Raw data collected and stored",
+        "Deviations from protocol documented",
+        "Lab notebook entries complete"
+      ],
+      "labels": [
+        "lab",
+        "execution"
+      ],
+      "assignmentHint": "human",
+      "estimatedEffort": "8h"
+    },
+    {
+      "templateNodeId": "analyze",
+      "title": "Analyze experimental results",
+      "description": "Perform statistical analysis on collected data. Generate visualizations and test hypothesis.",
+      "acceptanceCriteria": [
+        "Descriptive statistics computed",
+        "Hypothesis test performed with p-value",
+        "Effect size calculated",
+        "Visualizations generated",
+        "Assumptions checked"
+      ],
+      "labels": [
+        "lab",
+        "analysis",
+        "automated"
+      ],
+      "assignmentHint": "engine:grz-worker",
+      "estimatedEffort": "2h"
+    },
+    {
+      "templateNodeId": "report",
+      "title": "Write experiment report",
+      "description": "Draft a report covering methods, results, and conclusions. Include all figures and tables.",
+      "acceptanceCriteria": [
+        "Report follows standard structure (intro, methods, results, discussion)",
+        "All figures and tables included",
+        "Limitations discussed",
+        "Conclusions supported by data"
+      ],
+      "labels": [
+        "lab",
+        "writing"
+      ],
+      "assignmentHint": "copilot",
+      "estimatedEffort": "3h"
+    }
+  ],
+  "edgeTemplates": [
+    {
+      "from": "hypothesis",
+      "to": "design",
+      "type": "dependency"
+    },
+    {
+      "from": "design",
+      "to": "execute",
+      "type": "dependency"
+    },
+    {
+      "from": "execute",
+      "to": "analyze",
+      "type": "dependency"
+    },
+    {
+      "from": "analyze",
+      "to": "report",
+      "type": "dependency"
+    }
+  ],
+  "engineBinding": {
+    "definitionId": "grz-worker",
+    "triggerOn": "on-ready-tasks"
+  }
+}

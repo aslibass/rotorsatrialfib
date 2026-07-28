@@ -1,0 +1,12 @@
+{
+  "$schema": "2",
+  "name": "60db0288-8d40-40bb-b8e7-48a97b898a85",
+  "dxId": "DX-2",
+  "title": "Knowledge Retrieval",
+  "description": "Verify all 5 knowledge folders are fully indexed and that natural language queries return accurate, relevant passages from the ingested PDFs.",
+  "status": "new",
+  "parentId": "99eae1ae-815b-480e-bae6-ba5d4cbfba2b",
+  "siblingOrder": 0,
+  "createdAt": "2026-07-09T02:41:38.2880942+00:00",
+  "lastModifiedAt": "2026-07-09T02:41:38.2880942+00:00"
+}

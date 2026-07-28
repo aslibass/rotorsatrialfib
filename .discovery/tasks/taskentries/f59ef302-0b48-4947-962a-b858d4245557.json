@@ -1,0 +1,12 @@
+{
+  "$schema": "2",
+  "name": "f59ef302-0b48-4947-962a-b858d4245557",
+  "dxId": "DX-16",
+  "title": "Validate incremental ingest end-to-end",
+  "description": "Drop a new PDF into knowledge/ and confirm it appears in search results without manual intervention.",
+  "status": "new",
+  "parentId": "8d35df2e-6a3e-4839-b014-23faf815addf",
+  "siblingOrder": 1,
+  "createdAt": "2026-07-09T02:42:15.1725305+00:00",
+  "lastModifiedAt": "2026-07-09T02:42:15.1725305+00:00"
+}

@@ -1,0 +1,38 @@
+# ============================================================================
+# COPYRIGHT PROTECTION — never publish third-party copyrighted material
+# ============================================================================
+# Source literature: hundreds of copyrighted journal articles / society
+# guideline PDFs (NEJM, Lancet, JACC, Circulation, JAMA, ESC, ACC, CSANZ …).
+# These must NOT be committed to a public repository. Each researcher supplies
+# their own licensed copies locally (see README "Bring your own literature").
+knowledge/
+
+# The bookshelf index embeds the FULL TEXT of the ingested PDFs, so it carries
+# the same copyright constraint as knowledge/. Rebuilt locally on ingest.
+.discovery/bookshelf/
+
+# ============================================================================
+# Discovery runtime (caches, logs, transient state, machine-specific config)
+# ============================================================================
+.discovery/logs/
+.discovery/runtime/
+.discovery/sessions/
+.discovery/toolcatalog/
+.discovery/agent-runs/
+.discovery/engine-runs/
+.discovery/host-tools/
+
+# Transient engine CLI run logs (verbose; may echo retrieved copyrighted text)
+.discovery/engine/copilot-cli/logs/
+.discovery/engine/copilot-cli/*.log
+
+# Machine-specific model-router config (localhost endpoints / ports)
+.discovery/llm-router.json
+
+# ============================================================================
+# Python / notebook
+# ============================================================================
+.venv/
+__pycache__/
+*.pyc
+.ipynb_checkpoints/

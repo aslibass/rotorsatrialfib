@@ -1,0 +1,10 @@
+{
+  "purposeId": "ad489857c985423295a68553ab72c8e0",
+  "title": "Cardiology Canon 2026",
+  "statement": "Build a comprehensive, searchable knowledge base from a curated collection of cardiology PDFs — enabling a cardiologist to retrieve, synthesize, and reason over clinical literature, guidelines, and research as a persistent second brain.",
+  "version": 1,
+  "createdAt": "2026-07-09T02:08:51.5550568+00:00",
+  "updatedAt": "2026-07-09T02:08:51.5550568+00:00",
+  "status": "created",
+  "$schema": "2"
+}

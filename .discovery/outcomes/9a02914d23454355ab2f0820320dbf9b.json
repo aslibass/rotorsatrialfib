@@ -1,0 +1,16 @@
+{
+  "outcomeId": "9a02914d23454355ab2f0820320dbf9b",
+  "purposeId": "ad489857c985423295a68553ab72c8e0",
+  "title": "5 source-grounded AF rotor research topics",
+  "description": "Produce exactly 5 distinct, non-overlapping research paper topics on the role of rotors in atrial fibrillation. Each topic includes a one-sentence mechanistic rationale. Topics must span at least 3 mechanistic domains (e.g., ion-channel/electrophysiology, fibrosis/structural substrate, mapping methodology, autonomic modulation), clearly distinguish hypothesis-generating ideas from established evidence, use precise scientific language, and be grounded in / cross-checked against the cardiology-canon-v2 bookshelf.",
+  "type": "artifact",
+  "verificationMode": "hybrid",
+  "status": "achieved",
+  "rubricId": "9d6b7eeb2a7c43ca8da4fa8faadfaa89",
+  "taskIds": [
+    "DX-18"
+  ],
+  "createdAt": "2026-07-28T00:33:57.6968087+00:00",
+  "updatedAt": "2026-07-28T00:45:39.7157427+00:00",
+  "$schema": "2"
+}

@@ -1,0 +1,35 @@
+{
+  "$schema": "2",
+  "name": "b196a4c7-7cfc-4d02-9ecc-16038545b950",
+  "dxId": "DX-18",
+  "title": "come up with 5 new research topics for the role of rotors in the heart during artrial fribilation",
+  "description": "5 new research topics for the role of rotors in the heart during atrial fribilation",
+  "status": "complete",
+  "parentId": "99eae1ae-815b-480e-bae6-ba5d4cbfba2b",
+  "siblingOrder": 4,
+  "executionHistory": [
+    {
+      "createdAt": "2026-07-28T00:42:43.3277938+00:00",
+      "action": "status:New\u2192Executing",
+      "createdBy": "system",
+      "createdByType": "system",
+      "summary": "Starting execution: searching cardiology-canon-v2 bookshelf for rotor/AF content, then synthesizing 5 research topics."
+    },
+    {
+      "createdAt": "2026-07-28T00:44:41.9805929+00:00",
+      "action": "status:Executing\u2192ExecutionDone",
+      "createdBy": "system",
+      "createdByType": "system",
+      "summary": "Deliverable written to evaluation/af-rotor-research-topics.md. 5 distinct topics spanning 5 mechanistic domains, each with pathophysiological rationale, bookshelf citations, and explicit hypothesis-vs-evidence labeling."
+    },
+    {
+      "createdAt": "2026-07-28T00:45:47.3344792+00:00",
+      "action": "status:ExecutionDone\u2192Complete",
+      "createdBy": "system",
+      "createdByType": "system",
+      "summary": "Grade passed: composite score 1.0/1.0 (all 6 rubric questions scored 1.0). Grade ID: ae9a1c4860b042b981d2c7084015d31c. Deliverable validated and complete."
+    }
+  ],
+  "createdAt": "2026-07-28T00:25:08.8280204+00:00",
+  "lastModifiedAt": "2026-07-28T00:45:47.3344792+00:00"
+}

@@ -1,0 +1,27 @@
+{
+  "$schema": "2",
+  "name": "7f444939-824f-4007-8906-a9dc72417b8a",
+  "dxId": "DX-21",
+  "title": "Write abstract: I_K,ACh-mediated APD shortening in vagal paroxysmal AF",
+  "description": "Draft a structured research abstract for Topic 2 from evaluation/af-rotor-research-topics.md. Domain: ion-channel EP / autonomic modulation. Include wavelength relation $\\lambda = \\text{CV} \\times \\text{ERP}$. Ground in cardiology-canon-v2; label hypothesis-generating content. Use LaTeX $...$ for notation.",
+  "status": "executionDone",
+  "parentId": "b196a4c7-7cfc-4d02-9ecc-16038545b950",
+  "siblingOrder": 1,
+  "executionHistory": [
+    {
+      "createdAt": "2026-07-28T01:04:42.0300714+00:00",
+      "action": "status:New\u2192Executing",
+      "createdBy": "system",
+      "createdByType": "system"
+    },
+    {
+      "createdAt": "2026-07-28T01:05:47.0231936+00:00",
+      "action": "status:Executing\u2192ExecutionDone",
+      "createdBy": "system",
+      "createdByType": "system",
+      "summary": "Abstract 2 (I_K,ACh-mediated APD shortening) written to evaluation/af-rotor-abstracts.md."
+    }
+  ],
+  "createdAt": "2026-07-28T00:51:24.1379457+00:00",
+  "lastModifiedAt": "2026-07-28T01:05:47.0231936+00:00"
+}

@@ -1,0 +1,29 @@
+{
+  "total": 26,
+  "byStatus": {
+    "New": 12,
+    "ExecutionDone": 9,
+    "Removed": 1,
+    "Executing": 1,
+    "Complete": 2,
+    "OnHold": 1
+  },
+  "ready": [
+    "01183bb7-f22c-4b5f-9156-d630fb89f5e3",
+    "1fdf5617-12bd-4b00-bafd-3e2cca111b0c",
+    "209bb7af-dd96-4260-9b34-537fe5872ff4",
+    "22e88fb6-8b15-4caa-8099-cb40c8066130",
+    "5173c3d1-19d9-4221-bcbd-122909c9a859",
+    "5bd00f0c-b352-4016-9eb2-07deb166fe73",
+    "60db0288-8d40-40bb-b8e7-48a97b898a85",
+    "8d35df2e-6a3e-4839-b014-23faf815addf",
+    "99eae1ae-815b-480e-bae6-ba5d4cbfba2b",
+    "9cc76de6-b3d2-46ba-b62e-03955c5faedf",
+    "c3beb462-e501-4a19-9096-8af169b1ac05",
+    "f59ef302-0b48-4947-962a-b858d4245557"
+  ],
+  "blocked": [],
+  "stale": [],
+  "rebuiltAt": "2026-07-28T02:02:54.8936328+00:00",
+  "updatedAt": "2026-07-28T02:02:32.4536622+00:00"
+}
