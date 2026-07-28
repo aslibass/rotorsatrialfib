@@ -12,6 +12,12 @@ rigour, and research ethics — all orchestrated through a chat-driven experienc
 > underlying journal PDFs are copyrighted and are **not** committed here (see
 > [Bring your own literature](#bring-your-own-literature)).
 
+> 🩺 **Cardiologists start here:** [evaluation/process-narrative.md](evaluation/process-narrative.md)
+> traces the scientific evolution from first-draft abstracts through four expert
+> reviews to the final revision — with the actual citation corrections and findings
+> (e.g. the ESC AF ref 709 misattribution, the sinoatrial-node quote misapplication,
+> and the Pennes-perfusion circularity fix) that drove each change.
+
 ---
 
 ## ⚠️ Bring your own literature
@@ -220,12 +226,16 @@ All outputs live in [evaluation/](evaluation/):
 
 | File | Produced by |
 |---|---|
+| [process-narrative.md](evaluation/process-narrative.md) | **case study**: v1 → reviews → v2 evolution with real references |
 | [af-rotor-research-topics.md](evaluation/af-rotor-research-topics.md) | topic-generation (DX-18) |
-| [af-rotor-abstracts.md](evaluation/af-rotor-abstracts.md) | af-abstract-writer (DX-20…24) |
-| [af-rotor-abstracts-critique.md](evaluation/af-rotor-abstracts-critique.md) | senior-cardiologist-critic |
+| [af-rotor-abstracts.md](evaluation/af-rotor-abstracts.md) | af-abstract-writer — v1 (DX-20…24) |
+| [af-rotor-abstracts-v2.md](evaluation/af-rotor-abstracts-v2.md) | af-abstract-writer — v2 revision (DX-26) |
+| [af-rotor-abstracts-critique.md](evaluation/af-rotor-abstracts-critique.md) | senior-cardiologist-critic (v1 → Major Revision) |
+| [af-rotor-abstracts-v2-critique.md](evaluation/af-rotor-abstracts-v2-critique.md) | senior-cardiologist-critic (v2 → Minor Revision) |
 | [af-rotor-citation-audit.md](evaluation/af-rotor-citation-audit.md) | citation-integrity-auditor |
 | [af-rotor-methodology-review.md](evaluation/af-rotor-methodology-review.md) | biostatistics-methodology-reviewer |
 | [af-rotor-ethics-review.md](evaluation/af-rotor-ethics-review.md) | research-ethics-reviewer |
+| [af-rotor-copyedit-report.md](evaluation/af-rotor-copyedit-report.md) | scientific-copy-editor |
 | [research-workflow-sop.md](evaluation/research-workflow-sop.md) | workflow documentation |
 | [af-rotor-mechanisms-workflow.ipynb](evaluation/af-rotor-mechanisms-workflow.ipynb) | reproducible analysis notebook |
 
