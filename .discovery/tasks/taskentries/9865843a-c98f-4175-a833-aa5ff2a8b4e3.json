@@ -4,7 +4,7 @@
   "dxId": "DX-26",
   "title": "Revise AF rotor abstracts to v2 (resolve review-panel findings)",
   "description": "Mission Control orchestration: delegate af-abstract-writer to produce evaluation/af-rotor-abstracts-v2.md resolving the citation-audit, methodology, ethics, and senior-critic findings on af-rotor-abstracts.md (DX-20..DX-24). Then senior-cardiologist-critic reviews v2 -\u003E af-rotor-abstracts-v2-critique.md (Accept/Minor/Major); scientific-copy-editor polishes v2 -\u003E af-rotor-copyedit-report.md. Max 2 write-\u003Ecritique rounds; stop at Accept/Minor revision.",
-  "status": "executing",
+  "status": "complete",
   "parentId": "b196a4c7-7cfc-4d02-9ecc-16038545b950",
   "siblingOrder": 6,
   "assignedTo": {
@@ -18,8 +18,35 @@
       "createdBy": "system",
       "createdByType": "system",
       "summary": "Delegated af-abstract-writer (background) to produce af-rotor-abstracts-v2.md with all required citation/methodology/ethics fixes including the A5 circular-perfusion fatal-flaw fix."
+    },
+    {
+      "createdAt": "2026-07-28T02:26:03.5939586+00:00",
+      "action": "status:Executing\u2192ExecutionDone",
+      "createdBy": "system",
+      "createdByType": "system",
+      "summary": "All three deliverables persisted and validated; critic recommends Minor Revision (stopping criterion met)."
+    },
+    {
+      "createdAt": "2026-07-28T02:26:07.2648057+00:00",
+      "action": "status:ExecutionDone\u2192Complete",
+      "createdBy": "system",
+      "createdByType": "system"
+    }
+  ],
+  "comments": [
+    {
+      "timestamp": "2026-07-28T02:14:01.6890355+00:00",
+      "createdBy": "user",
+      "createdByType": "user",
+      "text": "v2 deliverable persisted at evaluation/af-rotor-abstracts-v2.md (writer produced content; orchestrator wrote the file since writer lacked create tool). All required fixes applied: ref 709 -\u003E Mohanty et al. (Natale group); Narayan JACC 2012 flagged external; SA-node reframing \u002B re-grounding in 2018 CSANZ AF / ESC AF 952-953; HCM claim dropped; I_K,ACh labeled unsourced; per-abstract statistical \u002B ethics lines; A5 omega_b now a measured input (FATAL fix). Now delegated senior-cardiologist-critic to review v2 (round 1 of max 2)."
+    },
+    {
+      "timestamp": "2026-07-28T02:25:52.0735142+00:00",
+      "createdBy": "user",
+      "createdByType": "user",
+      "text": "Round 1 complete. senior-cardiologist-critic recommendation: MINOR REVISION (6/6 panel BLOCKER/FATAL/MAJOR findings resolved). Stopping criterion met (stop at Accept or Minor revision; 1 of max 2 rounds used). scientific-copy-editor polished af-rotor-abstracts-v2.md in place (LaTeX EC_50/APD_90/N fixes, rotors-only terminology, per-abstract word counts) with no scientific-meaning changes. Deliverables persisted under evaluation/: af-rotor-abstracts-v2.md, af-rotor-abstracts-v2-critique.md, af-rotor-copyedit-report.md. Residual items are all Minor (Ab5 fibrosis-\u003Eomega_b sign; Ab2 leading-circle vs rotor precision; two [VERIFY] citation-locator notes) \u2014 non-blocking, documented for authors."
     }
   ],
   "createdAt": "2026-07-28T02:02:25.0141364+00:00",
-  "lastModifiedAt": "2026-07-28T02:02:32.4536622+00:00"
+  "lastModifiedAt": "2026-07-28T02:26:07.2648057+00:00"
 }

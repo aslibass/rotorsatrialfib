@@ -124,10 +124,10 @@
       "taskId": "9865843a-c98f-4175-a833-aa5ff2a8b4e3",
       "dxId": "DX-26",
       "title": "Revise AF rotor abstracts to v2 (resolve review-panel findings)",
-      "status": "executing",
+      "status": "complete",
       "parentId": "b196a4c7-7cfc-4d02-9ecc-16038545b950",
       "assignedToType": "Agent",
-      "updatedAt": "2026-07-28T02:02:32.4536622+00:00"
+      "updatedAt": "2026-07-28T02:26:07.2648057+00:00"
     },
     {
       "taskId": "99eae1ae-815b-480e-bae6-ba5d4cbfba2b",
@@ -209,5 +209,5 @@
       "updatedAt": "2026-07-09T02:42:15.1725305+00:00"
     }
   ],
-  "rebuiltAt": "2026-07-28T02:02:54.8936328+00:00"
+  "rebuiltAt": "2026-07-28T02:32:56.6910888+00:00"
 }
