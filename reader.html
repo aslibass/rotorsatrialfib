@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Cardiology Canon 2026 — Document Reader</title>
+<script>
+  (() => {
+    const param = new URLSearchParams(window.location.search).get("scoutTheme");
+    const theme =
+      param || (window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
+    document.documentElement.setAttribute("data-theme", theme);
+  })();
+</script>
+<!-- Markdown, math, and diagram rendering (loaded from CDN; GitHub Pages is online) -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css" crossorigin="anonymous" />
+<style>
+:root {
+  color-scheme: light;
+  --cp-bg: #f7f4ef;
+  --cp-bg-elevated: #fcfbf8;
+  --cp-surface: #ffffff;
+  --cp-surface-soft: #f5f5f5;
+  --cp-border: #dedede;
+  --cp-border-strong: #919191;
+  --cp-text: #242424;
+  --cp-text-muted: #5c5c5c;
+  --cp-text-soft: #6f6f6f;
+  --cp-accent: #b11f4b;
+  --cp-accent-hover: #9a1a41;
+  --cp-accent-soft: rgba(177, 31, 75, 0.08);
+  --cp-accent-fg: #ffffff;
+  --cp-link: #0078d4;
+  --cp-shadow: 0 18px 48px rgba(0, 0, 0, 0.12);
+}
+html[data-theme="dark"] {
+  color-scheme: dark;
+  --cp-bg: #3d3b3a;
+  --cp-bg-elevated: #343231;
+  --cp-surface: #292929;
+  --cp-surface-soft: #2e2e2e;
+  --cp-border: #474747;
+  --cp-border-strong: #5f5f5f;
+  --cp-text: #dedede;
+  --cp-text-muted: #919191;
+  --cp-text-soft: #b0b0b0;
+  --cp-accent: #fd8ea1;
+  --cp-accent-hover: #fb7b91;
+  --cp-accent-soft: rgba(253, 142, 161, 0.14);
+  --cp-accent-fg: #1a1a1a;
+  --cp-link: #4da6ff;
+  --cp-shadow: 0 18px 48px rgba(0, 0, 0, 0.32);
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  font-family: "Segoe UI", Aptos, Calibri, -apple-system, BlinkMacSystemFont, sans-serif;
+  background: var(--cp-bg); color: var(--cp-text); line-height: 1.6;
+}
+/* top nav */
+.nav {
+  position: sticky; top: 0; z-index: 20;
+  display: flex; align-items: center; flex-wrap: wrap; gap: 6px;
+  padding: 10px 20px; background: var(--cp-bg-elevated);
+  border-bottom: 1px solid var(--cp-border);
+}
+.nav .brand { font-weight: 700; font-size: 0.95rem; margin-right: 10px; white-space: nowrap; }
+.nav a { text-decoration: none; color: var(--cp-text-muted); font-size: 0.86rem; padding: 6px 11px; border-radius: 8px; white-space: nowrap; }
+.nav a:hover { color: var(--cp-text); background: var(--cp-surface-soft); }
+.nav a.active { color: var(--cp-accent-fg); background: var(--cp-accent); }
+.nav .spacer { flex: 1; }
+.nav select {
+  font-family: inherit; font-size: 0.82rem; padding: 6px 10px; border-radius: 8px;
+  background: var(--cp-surface); color: var(--cp-text); border: 1px solid var(--cp-border);
+}
+/* reading column */
+.wrap { max-width: 860px; margin: 0 auto; padding: 30px 24px 80px; }
+.doc {
+  background: var(--cp-surface); border: 1px solid var(--cp-border);
+  border-radius: 16px; padding: 40px 48px;
+  box-shadow: 0 0 2px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.14);
+}
+.doc h1 { font-size: 1.7rem; letter-spacing: -0.02em; margin: 0 0 18px; line-height: 1.25; }
+.doc h2 { font-size: 1.28rem; margin: 34px 0 10px; padding-bottom: 6px; border-bottom: 1px solid var(--cp-border); }
+.doc h3 { font-size: 1.08rem; margin: 26px 0 8px; }
+.doc p { margin: 12px 0; }
+.doc a { color: var(--cp-link); text-decoration: none; }
+.doc a:hover { text-decoration: underline; }
+.doc code { font-family: Consolas, "Courier New", monospace; background: var(--cp-surface-soft); padding: 1px 6px; border-radius: 5px; font-size: 0.88em; }
+.doc pre { background: var(--cp-surface-soft); border: 1px solid var(--cp-border); border-radius: 10px; padding: 14px 16px; overflow-x: auto; }
+.doc pre code { background: none; padding: 0; }
+.doc blockquote {
+  margin: 16px 0; padding: 10px 18px; border-left: 4px solid var(--cp-accent);
+  background: var(--cp-accent-soft); border-radius: 0 8px 8px 0; color: var(--cp-text-muted);
+}
+.doc blockquote p { margin: 6px 0; }
+.doc table { border-collapse: collapse; width: 100%; margin: 18px 0; font-size: 0.92rem; }
+.doc th, .doc td { border: 1px solid var(--cp-border); padding: 8px 12px; text-align: left; vertical-align: top; }
+.doc th { background: var(--cp-surface-soft); font-weight: 600; }
+.doc tr:nth-child(even) td { background: var(--cp-bg-elevated); }
+.doc hr { border: none; border-top: 1px solid var(--cp-border); margin: 30px 0; }
+.doc ul, .doc ol { padding-left: 24px; }
+.doc li { margin: 5px 0; }
+.doc .mermaid { text-align: center; margin: 22px 0; background: var(--cp-surface-soft); border: 1px solid var(--cp-border); border-radius: 12px; padding: 18px; }
+.status { color: var(--cp-text-soft); text-align: center; padding: 60px 0; }
+.crumb { font-size: 0.82rem; color: var(--cp-text-soft); margin: 0 auto 14px; max-width: 860px; padding: 0 24px; }
+.crumb a { color: var(--cp-link); text-decoration: none; }
+</style>
+</head>
+<body>
+  <nav class="nav" id="nav">
+    <span class="brand">🫀 Cardiology Canon 2026</span>
+    <a href="index.html">Overview</a>
+    <a href="reader.html?doc=process-narrative" data-doc="process-narrative">1 · Process flow</a>
+    <a href="bookshelf-map.html">2 · Bookshelf map</a>
+    <a href="reader.html?doc=abstracts-v2" data-doc="abstracts-v2">3 · Final abstracts</a>
+    <span class="spacer"></span>
+    <select id="jump" title="Jump to any document"></select>
+  </nav>
+
+  <div class="crumb" id="crumb"></div>
+  <div class="wrap">
+    <article class="doc" id="doc"><div class="status">Loading…</div></article>
+  </div>
+
+<script src="https://cdn.jsdelivr.net/npm/marked@12.0.2/marked.min.js" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/mermaid@10.9.1/dist/mermaid.min.js"></script>
+<script>
+// Whitelisted documents (friendly key -> path relative to evaluation/, plus label)
+const BASE = "evaluation/";
+const DOCS = {
+  "process-narrative": { file: "process-narrative.md", label: "Process flow (narrative)" },
+  "abstracts-v2":      { file: "af-rotor-abstracts-v2.md", label: "Final abstracts (v2)" },
+  "abstracts-v1":      { file: "af-rotor-abstracts.md", label: "First-draft abstracts (v1)" },
+  "topics":            { file: "af-rotor-research-topics.md", label: "Research topics (DX-18)" },
+  "citation-audit":    { file: "af-rotor-citation-audit.md", label: "Review · citation audit" },
+  "methodology":       { file: "af-rotor-methodology-review.md", label: "Review · methodology" },
+  "ethics":            { file: "af-rotor-ethics-review.md", label: "Review · ethics" },
+  "critique-v1":       { file: "af-rotor-abstracts-critique.md", label: "Senior critique (v1)" },
+  "critique-v2":       { file: "af-rotor-abstracts-v2-critique.md", label: "Senior critique (v2)" },
+  "copyedit":          { file: "af-rotor-copyedit-report.md", label: "Copy-edit report" }
+};
+// Map a bare filename back to a key (for rewriting in-document .md links)
+const FILE_TO_KEY = {};
+Object.entries(DOCS).forEach(([k, v]) => { FILE_TO_KEY[v.file] = k; });
+
+const params = new URLSearchParams(location.search);
+let key = params.get("doc");
+if (!DOCS[key]) key = "process-narrative";
+
+// Build the jump dropdown
+const jump = document.getElementById("jump");
+Object.entries(DOCS).forEach(([k, v]) => {
+  const o = document.createElement("option");
+  o.value = k; o.textContent = v.label; if (k === key) o.selected = true;
+  jump.appendChild(o);
+});
+jump.addEventListener("change", () => { location.search = "?doc=" + jump.value; });
+
+// Highlight active primary nav item
+document.querySelectorAll(".nav a[data-doc]").forEach(a => {
+  if (a.getAttribute("data-doc") === key) a.classList.add("active");
+});
+
+mermaid.initialize({
+  startOnLoad: false,
+  theme: document.documentElement.getAttribute("data-theme") === "dark" ? "dark" : "neutral",
+  securityLevel: "strict"
+});
+
+const docEl = document.getElementById("doc");
+const crumbEl = document.getElementById("crumb");
+
+fetch(BASE + DOCS[key].file)
+  .then(r => { if (!r.ok) throw new Error(r.status + " " + r.statusText); return r.text(); })
+  .then(md => render(md))
+  .catch(err => {
+    docEl.innerHTML = `<div class="status">Could not load <code>${DOCS[key].file}</code>.<br>${err.message}<br><br>` +
+      `If you are viewing this from a local file, use the GitHub Pages URL or a local web server (browsers block <code>fetch</code> of local files).</div>`;
+  });
+
+function render(md) {
+  document.title = DOCS[key].label + " — Cardiology Canon 2026";
+  crumbEl.innerHTML = `<a href="index.html">Overview</a> &nbsp;›&nbsp; ${DOCS[key].label}`;
+
+  marked.setOptions({ gfm: true, breaks: false });
+  docEl.innerHTML = marked.parse(md);
+
+  // Convert ```mermaid code blocks into mermaid containers
+  docEl.querySelectorAll("pre code.language-mermaid").forEach(code => {
+    const div = document.createElement("div");
+    div.className = "mermaid";
+    div.textContent = code.textContent;
+    code.closest("pre").replaceWith(div);
+  });
+
+  // Rewrite in-document links: .md -> reader.html?doc=key ; leave .html and external as-is
+  docEl.querySelectorAll("a[href]").forEach(a => {
+    let href = a.getAttribute("href");
+    if (!href || href.startsWith("http") || href.startsWith("#")) return;
+    const clean = href.split("#")[0].split("?")[0].replace(/^\.\//, "").replace(/^evaluation\//, "");
+    if (clean === "" || clean === ".") { a.setAttribute("href", "index.html"); return; }
+    if (clean.endsWith(".md") && FILE_TO_KEY[clean]) {
+      a.setAttribute("href", "reader.html?doc=" + FILE_TO_KEY[clean]);
+    } else if (clean.endsWith(".html")) {
+      a.setAttribute("href", clean);
+    }
+  });
+
+  // Render LaTeX math
+  if (window.renderMathInElement) {
+    renderMathInElement(docEl, {
+      delimiters: [
+        { left: "$$", right: "$$", display: true },
+        { left: "$", right: "$", display: false }
+      ],
+      throwOnError: false
+    });
+  }
+
+  // Render mermaid diagrams
+  if (window.mermaid) {
+    try { mermaid.run({ nodes: docEl.querySelectorAll(".mermaid") }); } catch (e) { /* noop */ }
+  }
+}
+</script>
+</body>
+</html>

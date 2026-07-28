@@ -152,9 +152,26 @@ header p { margin: 0; color: var(--cp-text-muted); max-width: 70ch; }
 .note { font-size: 0.82rem; color: var(--cp-text-soft); }
 footer { margin-top: 30px; font-size: 0.8rem; color: var(--cp-text-soft); border-top: 1px solid var(--cp-border); padding-top: 16px; }
 code { font-family: Consolas, "Courier New", monospace; background: var(--cp-surface-soft); padding: 1px 5px; border-radius: 5px; font-size: 0.85em; }
+.nav {
+  position: sticky; top: 0; z-index: 20;
+  display: flex; align-items: center; flex-wrap: wrap; gap: 6px;
+  padding: 10px 20px; background: var(--cp-bg-elevated);
+  border-bottom: 1px solid var(--cp-border);
+}
+.nav .brand { font-weight: 700; font-size: 0.95rem; margin-right: 10px; white-space: nowrap; }
+.nav a { text-decoration: none; color: var(--cp-text-muted); font-size: 0.86rem; padding: 6px 11px; border-radius: 8px; white-space: nowrap; }
+.nav a:hover { color: var(--cp-text); background: var(--cp-surface-soft); }
+.nav a.active { color: var(--cp-accent-fg); background: var(--cp-accent); }
 </style>
 </head>
 <body>
+<nav class="nav">
+  <span class="brand">🫀 Cardiology Canon 2026</span>
+  <a href="../index.html">Overview</a>
+  <a href="../reader.html?doc=process-narrative">1 &middot; Process flow</a>
+  <a class="active" href="bookshelf-map.html">2 &middot; Bookshelf map</a>
+  <a href="../reader.html?doc=abstracts-v2">3 &middot; Final abstracts</a>
+</nav>
 <div class="wrap">
   <header>
     <h1>cardiology-canon-v2 &mdash; Bookshelf Map</h1>

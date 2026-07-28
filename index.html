@@ -16,6 +16,7 @@
 :root {
   color-scheme: light;
   --cp-bg: #f7f4ef;
+  --cp-bg-elevated: #fcfbf8;
   --cp-surface: #ffffff;
   --cp-surface-soft: #f5f5f5;
   --cp-border: #dedede;
@@ -30,6 +31,7 @@
 html[data-theme="dark"] {
   color-scheme: dark;
   --cp-bg: #3d3b3a;
+  --cp-bg-elevated: #343231;
   --cp-surface: #292929;
   --cp-surface-soft: #2e2e2e;
   --cp-border: #474747;
@@ -43,53 +45,116 @@ html[data-theme="dark"] {
 }
 * { box-sizing: border-box; }
 body {
-  margin: 0; min-height: 100vh;
-  display: flex; align-items: center; justify-content: center;
+  margin: 0;
   font-family: "Segoe UI", Aptos, Calibri, -apple-system, BlinkMacSystemFont, sans-serif;
-  background: var(--cp-bg); color: var(--cp-text); line-height: 1.55;
+  background: var(--cp-bg); color: var(--cp-text); line-height: 1.6;
 }
-.card {
-  max-width: 680px; margin: 24px; padding: 40px 44px;
-  background: var(--cp-surface); border: 1px solid var(--cp-border);
-  border-radius: 16px; box-shadow: 0 0 2px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.14);
+.wrap { max-width: 940px; margin: 0 auto; padding: 48px 24px 72px; }
+header { margin-bottom: 8px; }
+h1 { margin: 0 0 8px; font-size: 2rem; letter-spacing: -0.02em; }
+.tag { color: var(--cp-text-muted); margin: 0; font-size: 1.02rem; max-width: 68ch; }
+.lede {
+  margin: 22px 0 8px; padding: 18px 22px; background: var(--cp-surface); color: var(--cp-text-muted);
+  border: 1px solid var(--cp-border); border-left: 4px solid var(--cp-accent); border-radius: 0 12px 12px 0;
 }
-h1 { margin: 0 0 6px; font-size: 1.6rem; letter-spacing: -0.02em; }
-.tag { color: var(--cp-text-muted); margin: 0 0 24px; font-size: 0.95rem; }
-p { color: var(--cp-text-muted); }
-.actions { display: flex; flex-wrap: wrap; gap: 12px; margin: 26px 0 6px; }
-a.btn {
-  display: inline-flex; align-items: center; gap: 8px;
-  padding: 11px 18px; border-radius: 10px; text-decoration: none;
-  font-weight: 600; font-size: 0.92rem; border: 1px solid var(--cp-border);
+.lede strong { color: var(--cp-text); }
+h2.section { font-size: 1.15rem; margin: 40px 0 4px; }
+.section-sub { color: var(--cp-text-muted); margin: 0 0 20px; font-size: 0.92rem; }
+.steps { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+@media (max-width: 820px) { .steps { grid-template-columns: 1fr; } }
+a.step {
+  display: flex; flex-direction: column; text-decoration: none; color: inherit;
+  background: var(--cp-surface); border: 1px solid var(--cp-border); border-radius: 16px;
+  padding: 22px 22px 20px; transition: border-color 0.15s, transform 0.15s;
+  box-shadow: 0 0 2px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.14);
 }
-a.primary { background: var(--cp-accent); color: var(--cp-accent-fg); border-color: var(--cp-accent); }
-a.primary:hover { background: var(--cp-accent-hover); }
-a.ghost { background: var(--cp-surface-soft); color: var(--cp-text); }
-a.ghost:hover { border-color: var(--cp-accent); }
-.note { margin-top: 22px; font-size: 0.82rem; color: var(--cp-text-soft); border-top: 1px solid var(--cp-border); padding-top: 16px; }
+a.step:hover { border-color: var(--cp-accent); transform: translateY(-2px); }
+.step .kicker { font-size: 0.72rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: var(--cp-accent); }
+.step .icon { font-size: 1.7rem; margin: 6px 0 8px; }
+.step h3 { margin: 0 0 6px; font-size: 1.08rem; }
+.step p { margin: 0; font-size: 0.9rem; color: var(--cp-text-muted); }
+.step .go { margin-top: 14px; font-size: 0.85rem; font-weight: 600; color: var(--cp-accent); }
+.kpis { display: flex; flex-wrap: wrap; gap: 26px; margin: 30px 0 4px; padding: 20px 24px; background: var(--cp-bg-elevated); border: 1px solid var(--cp-border); border-radius: 14px; }
+.kpi .num { font-size: 1.5rem; font-weight: 700; color: var(--cp-accent); line-height: 1.1; }
+.kpi .lbl { font-size: 0.78rem; color: var(--cp-text-muted); }
+.morelinks { margin-top: 28px; display: flex; flex-wrap: wrap; gap: 10px; }
+a.chip { text-decoration: none; font-size: 0.85rem; padding: 8px 14px; border-radius: 999px; border: 1px solid var(--cp-border); background: var(--cp-surface-soft); color: var(--cp-text); }
+a.chip:hover { border-color: var(--cp-accent); color: var(--cp-accent); }
+.note { margin-top: 30px; font-size: 0.82rem; color: var(--cp-text-soft); border-top: 1px solid var(--cp-border); padding-top: 16px; }
 code { font-family: Consolas, "Courier New", monospace; background: var(--cp-surface-soft); padding: 1px 6px; border-radius: 5px; font-size: 0.85em; }
 </style>
 </head>
 <body>
-  <div class="card">
+<div class="wrap">
+  <header>
     <h1>Cardiology Canon 2026 &mdash; Rotors in Atrial Fibrillation</h1>
-    <p class="tag">A worked example of an agentic research pipeline in Microsoft Discovery.</p>
-    <p>
-      A team of specialised AI agents proposes novel research topics on the role of
-      <strong>rotors / spiral-wave reentry in atrial fibrillation</strong>, drafts fundable
-      research abstracts, and peer-reviews them for citation integrity, statistical rigour,
-      and research ethics &mdash; all grounded in a curated corpus of cardiology literature.
-    </p>
-    <div class="actions">
-      <a class="btn primary" href="evaluation/bookshelf-map.html">&#128506;&#65039; Explore the bookshelf map</a>
-      <a class="btn ghost" href="https://github.com/aslibass/rotorsatrialfib">View the repository</a>
-    </div>
-    <p class="note">
-      The interactive map visualises the <code>cardiology-canon-v2</code> knowledge base &mdash;
-      508 documents by year, society, and journal, plus the GraphRAG community structure
-      (143,233 indexed chunks across 252 top-level communities). Source PDFs are copyrighted
-      and excluded from the repository; the map shows aggregate metadata only.
-    </p>
+    <p class="tag">A worked example of an agentic research pipeline in Microsoft Discovery: a team of
+      specialised AI agents proposes, drafts, and peer-reviews fundable research on the role of
+      <strong>rotors / spiral-wave reentry in AF</strong>, grounded in a curated cardiology corpus.</p>
+  </header>
+
+  <div class="lede">
+    <strong>For cardiologists:</strong> follow the three steps below to review the work the way a reviewer would &mdash;
+    see <em>how the science evolved</em> (what was wrong first and how it was corrected), <em>what evidence base</em>
+    it stands on, and <em>the final peer-reviewed output</em>. Diagrams and equations render in your browser.
   </div>
+
+  <div class="kpis">
+    <div class="kpi"><div class="num">5</div><div class="lbl">research abstracts</div></div>
+    <div class="kpi"><div class="num">4</div><div class="lbl">independent expert reviews</div></div>
+    <div class="kpi"><div class="num">6 / 6</div><div class="lbl">blocking findings resolved</div></div>
+    <div class="kpi"><div class="num">508</div><div class="lbl">documents in the corpus</div></div>
+    <div class="kpi"><div class="num">Major &rarr; Minor</div><div class="lbl">revision verdict</div></div>
+  </div>
+
+  <h2 class="section">Review it in three steps</h2>
+  <p class="section-sub">Each opens in a clean reader with rendered flow diagrams, tables, and LaTeX equations.</p>
+  <div class="steps">
+    <a class="step" href="reader.html?doc=process-narrative">
+      <span class="kicker">Step 1 &middot; The flow</span>
+      <span class="icon">&#128260;</span>
+      <h3>How the review evolved</h3>
+      <p>First-draft abstracts &rarr; four expert reviews &rarr; a defensible v2 &mdash; with the actual citation
+         corrections (ESC AF ref 709, the sinoatrial-node quote, the Pennes-perfusion circularity) that drove each change.</p>
+      <span class="go">Read the process narrative &rarr;</span>
+    </a>
+    <a class="step" href="evaluation/bookshelf-map.html">
+      <span class="kicker">Step 2 &middot; The evidence</span>
+      <span class="icon">&#128506;&#65039;</span>
+      <h3>The knowledge base at a glance</h3>
+      <p>An interactive map of the <code>cardiology-canon-v2</code> corpus &mdash; 508 documents by year, society,
+         and journal, plus the GraphRAG community structure (143,233 indexed chunks across 252 communities).</p>
+      <span class="go">Explore the bookshelf map &rarr;</span>
+    </a>
+    <a class="step" href="reader.html?doc=abstracts-v2">
+      <span class="kicker">Step 3 &middot; The output</span>
+      <span class="icon">&#128203;</span>
+      <h3>The final abstracts (v2)</h3>
+      <p>All five revised, review-passed abstracts &mdash; Background &middot; Hypothesis &middot; Methods &middot;
+         Expected Results &middot; Significance &mdash; with inline citations and a consolidated revision note.</p>
+      <span class="go">Read the final abstracts &rarr;</span>
+    </a>
+  </div>
+
+  <h2 class="section">Or dive into any single artifact</h2>
+  <p class="section-sub">The individual review reports behind Step 1, rendered the same way.</p>
+  <div class="morelinks">
+    <a class="chip" href="reader.html?doc=topics">Research topics (DX-18)</a>
+    <a class="chip" href="reader.html?doc=abstracts-v1">First-draft abstracts (v1)</a>
+    <a class="chip" href="reader.html?doc=citation-audit">Citation audit</a>
+    <a class="chip" href="reader.html?doc=methodology">Methodology review</a>
+    <a class="chip" href="reader.html?doc=ethics">Ethics review</a>
+    <a class="chip" href="reader.html?doc=critique-v1">Senior critique (v1)</a>
+    <a class="chip" href="reader.html?doc=critique-v2">Senior critique (v2)</a>
+    <a class="chip" href="reader.html?doc=copyedit">Copy-edit report</a>
+    <a class="chip" href="https://github.com/aslibass/rotorsatrialfib">Source repository &#8599;</a>
+  </div>
+
+  <p class="note">
+    Source PDFs are copyrighted and excluded from the repository; the bookshelf map shows aggregate metadata only,
+    and the deliverables use short attributed quotations for scholarly commentary. This is the <em>method and the output</em>,
+    not the source library &mdash; drop your own licensed PDFs into <code>knowledge/</code> to reproduce the pipeline.
+  </p>
+</div>
 </body>
 </html>
