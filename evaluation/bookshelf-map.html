@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>cardiology-canon-v2 — Bookshelf Map</title>
+<script>
+  (() => {
+    const param = new URLSearchParams(window.location.search).get("scoutTheme");
+    const theme =
+      param || (window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
+    document.documentElement.setAttribute("data-theme", theme);
+  })();
+</script>
+<style>
+:root {
+  color-scheme: light;
+  --cp-bg: #f7f4ef;
+  --cp-bg-elevated: #fcfbf8;
+  --cp-surface: #ffffff;
+  --cp-surface-soft: #f5f5f5;
+  --cp-border: #dedede;
+  --cp-border-strong: #919191;
+  --cp-text: #242424;
+  --cp-text-muted: #5c5c5c;
+  --cp-text-soft: #6f6f6f;
+  --cp-accent: #b11f4b;
+  --cp-accent-hover: #9a1a41;
+  --cp-accent-soft: rgba(177, 31, 75, 0.08);
+  --cp-accent-fg: #ffffff;
+  --cp-success: #16a34a;
+  --cp-danger: #dc2626;
+  --cp-warning: #f59e0b;
+  --cp-link: #0078d4;
+  --cp-shadow: 0 18px 48px rgba(0, 0, 0, 0.12);
+  --cp-overlay: rgba(255, 255, 255, 0.8);
+  --cp-panel: rgba(255, 255, 255, 0.86);
+  --cp-panel-strong: rgba(255, 255, 255, 0.96);
+  --cp-sheen: rgba(255, 255, 255, 0.55);
+  --cp-highlight: rgba(177, 31, 75, 0.12);
+}
+html[data-theme="dark"] {
+  color-scheme: dark;
+  --cp-bg: #3d3b3a;
+  --cp-bg-elevated: #343231;
+  --cp-surface: #292929;
+  --cp-surface-soft: #2e2e2e;
+  --cp-border: #474747;
+  --cp-border-strong: #5f5f5f;
+  --cp-text: #dedede;
+  --cp-text-muted: #919191;
+  --cp-text-soft: #b0b0b0;
+  --cp-accent: #fd8ea1;
+  --cp-accent-hover: #fb7b91;
+  --cp-accent-soft: rgba(253, 142, 161, 0.14);
+  --cp-accent-fg: #1a1a1a;
+  --cp-success: #4ade80;
+  --cp-danger: #f87171;
+  --cp-warning: #fbbf24;
+  --cp-link: #4da6ff;
+  --cp-shadow: 0 18px 48px rgba(0, 0, 0, 0.32);
+  --cp-overlay: rgba(41, 41, 41, 0.88);
+  --cp-panel: rgba(41, 41, 41, 0.72);
+  --cp-panel-strong: rgba(41, 41, 41, 0.96);
+  --cp-sheen: rgba(255, 255, 255, 0.04);
+  --cp-highlight: rgba(253, 142, 161, 0.12);
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  font-family: "Segoe UI", Aptos, Calibri, -apple-system, BlinkMacSystemFont, sans-serif;
+  background: var(--cp-bg);
+  color: var(--cp-text);
+  line-height: 1.5;
+}
+.wrap { max-width: 1180px; margin: 0 auto; padding: 32px 24px 64px; }
+header h1 { margin: 0 0 4px; font-size: 1.75rem; letter-spacing: -0.02em; }
+header p { margin: 0; color: var(--cp-text-muted); max-width: 70ch; }
+.provider-pill {
+  display: inline-block; margin-top: 12px; padding: 3px 10px;
+  font-family: Consolas, "Courier New", monospace; font-size: 0.78rem;
+  background: var(--cp-accent-soft); color: var(--cp-accent);
+  border: 1px solid var(--cp-border); border-radius: 999px;
+}
+.kpis { display: grid; grid-template-columns: repeat(auto-fit, minmax(170px, 1fr)); gap: 16px; margin: 28px 0; }
+.kpi {
+  background: var(--cp-surface); border: 1px solid var(--cp-border);
+  border-radius: 16px; padding: 18px 20px;
+  box-shadow: 0 0 2px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.14);
+}
+.kpi .num { font-size: 1.9rem; font-weight: 700; color: var(--cp-accent); line-height: 1.1; }
+.kpi .lbl { font-size: 0.82rem; color: var(--cp-text-muted); margin-top: 4px; }
+.card {
+  background: var(--cp-surface); border: 1px solid var(--cp-border);
+  border-radius: 16px; padding: 22px 24px; margin-bottom: 22px;
+  box-shadow: 0 0 2px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.14);
+}
+.card h2 { margin: 0 0 4px; font-size: 1.12rem; }
+.card .sub { margin: 0 0 18px; font-size: 0.86rem; color: var(--cp-text-muted); }
+.grid2 { display: grid; grid-template-columns: 1fr 1fr; gap: 22px; }
+@media (max-width: 820px) { .grid2 { grid-template-columns: 1fr; } }
+
+/* timeline */
+.timeline { display: flex; align-items: flex-end; gap: 4px; height: 220px; padding-top: 8px; }
+.tl-col { flex: 1; display: flex; flex-direction: column; align-items: center; justify-content: flex-end; height: 100%; }
+.tl-bar {
+  width: 100%; background: var(--cp-accent); border-radius: 4px 4px 0 0;
+  min-height: 2px; transition: background 0.15s; cursor: default;
+}
+.tl-col:hover .tl-bar { background: var(--cp-accent-hover); }
+.tl-yr { font-size: 0.6rem; color: var(--cp-text-soft); margin-top: 5px; transform: rotate(-60deg); transform-origin: center; white-space: nowrap; height: 34px; }
+.tl-val { font-size: 0.62rem; color: var(--cp-text-muted); margin-bottom: 3px; opacity: 0; transition: opacity 0.15s; }
+.tl-col:hover .tl-val { opacity: 1; }
+
+/* horizontal bars */
+.hbar-row { display: flex; align-items: center; gap: 10px; margin: 9px 0; }
+.hbar-lbl { flex: 0 0 128px; font-size: 0.85rem; color: var(--cp-text); }
+.hbar-track { flex: 1; background: var(--cp-surface-soft); border-radius: 6px; height: 20px; overflow: hidden; }
+.hbar-fill { height: 100%; background: var(--cp-accent); border-radius: 6px; transition: width 0.4s ease; }
+.hbar-val { flex: 0 0 42px; text-align: right; font-size: 0.82rem; color: var(--cp-text-muted); font-variant-numeric: tabular-nums; }
+
+/* hierarchy */
+.hier { display: flex; flex-direction: column; gap: 10px; }
+.hier-lvl { display: flex; align-items: center; gap: 14px; }
+.hier-node {
+  display: flex; flex-direction: column; align-items: center; justify-content: center;
+  min-width: 84px; padding: 10px 14px; border-radius: 12px;
+  background: var(--cp-accent-soft); border: 1px solid var(--cp-border);
+}
+.hier-node .n { font-weight: 700; color: var(--cp-accent); font-size: 1.15rem; }
+.hier-node .l { font-size: 0.72rem; color: var(--cp-text-muted); }
+.hier-arrow { color: var(--cp-text-soft); font-size: 1.1rem; }
+.hier-desc { font-size: 0.82rem; color: var(--cp-text-muted); }
+
+/* community distribution */
+.comm-wrap { display: flex; flex-wrap: wrap; gap: 3px; align-content: flex-start; }
+.comm-cell { border-radius: 3px; background: var(--cp-accent); opacity: 0.85; }
+.comm-cell:hover { outline: 2px solid var(--cp-accent-hover); }
+.legend { font-size: 0.78rem; color: var(--cp-text-soft); margin-top: 12px; }
+
+/* community table */
+.ct-row { display: flex; align-items: flex-start; gap: 12px; padding: 11px 0; border-bottom: 1px solid var(--cp-border); }
+.ct-row:last-child { border-bottom: none; }
+.ct-id { flex: 0 0 46px; font-family: Consolas, "Courier New", monospace; font-weight: 700; color: var(--cp-accent); font-size: 0.9rem; padding-top: 2px; }
+.ct-main { flex: 1; min-width: 0; }
+.ct-bar-track { position: relative; background: var(--cp-surface-soft); border-radius: 6px; height: 20px; overflow: hidden; margin-bottom: 7px; }
+.ct-bar { height: 100%; background: var(--cp-accent); border-radius: 6px; }
+.ct-n { position: absolute; right: 8px; top: 0; line-height: 20px; font-size: 0.72rem; color: var(--cp-text); font-variant-numeric: tabular-nums; }
+.ct-docs { display: flex; flex-wrap: wrap; gap: 6px; }
+.doc-chip { font-size: 0.76rem; color: var(--cp-text-muted); background: var(--cp-accent-soft); border: 1px solid var(--cp-border); border-radius: 6px; padding: 2px 8px; }
+
+.note { font-size: 0.82rem; color: var(--cp-text-soft); }
+footer { margin-top: 30px; font-size: 0.8rem; color: var(--cp-text-soft); border-top: 1px solid var(--cp-border); padding-top: 16px; }
+code { font-family: Consolas, "Courier New", monospace; background: var(--cp-surface-soft); padding: 1px 5px; border-radius: 5px; font-size: 0.85em; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <h1>cardiology-canon-v2 &mdash; Bookshelf Map</h1>
+    <p>A structural view of the GraphRAG knowledge base backing the AF-rotor research pipeline: 508 peer-reviewed guidelines, consensus statements, and landmark trials (1982&ndash;2023), indexed into a hierarchical community graph. Aggregate metadata only &mdash; no full text.</p>
+    <span class="provider-pill">provider: graphrag-zero &nbsp;&middot;&nbsp; id: 1e079605&hellip;</span>
+  </header>
+
+  <div class="kpis" id="kpis"></div>
+
+  <div class="card">
+    <h2>Corpus timeline</h2>
+    <p class="sub">Documents by publication year &mdash; hover a bar for the count.</p>
+    <div class="timeline" id="timeline"></div>
+  </div>
+
+  <div class="grid2">
+    <div class="card">
+      <h2>By source / society</h2>
+      <p class="sub">Issuing body inferred from the document title.</p>
+      <div id="soc"></div>
+    </div>
+    <div class="card">
+      <h2>By journal</h2>
+      <p class="sub">Publication venue inferred from the document title.</p>
+      <div id="jnl"></div>
+    </div>
+  </div>
+
+  <div class="card">
+    <h2>GraphRAG index structure</h2>
+    <p class="sub">graphrag-zero chunks each document, embeds it, then runs hierarchical community detection (Leiden-style) over the chunk graph. Each level is a coarser clustering of the level below.</p>
+    <div class="hier" id="hier"></div>
+  </div>
+
+  <div class="card">
+    <h2>Level-1 community sizes</h2>
+    <p class="sub">Each cell is one of the 252 top-level communities; area is proportional to the number of indexed chunks it contains. Larger cells are broad, well-covered themes; smaller cells are niche topics.</p>
+    <div class="comm-wrap" id="comm"></div>
+    <div class="legend" id="commLegend"></div>
+  </div>
+
+  <div class="card">
+    <h2>What&rsquo;s inside the largest communities</h2>
+    <p class="sub">graphrag-zero numbers communities rather than naming them. These labels are computed objectively &mdash; for each of the 15 biggest level-1 communities, the two source documents contributing the most chunks. The mass of the corpus sits in the comprehensive multi-topic society guidelines.</p>
+    <div id="commTable"></div>
+  </div>
+
+  <footer>
+    Generated from the local GraphRAG index (<code>.discovery/bookshelf/providers/graphrag-zero</code>) and <code>knowledge/</code> document metadata. Source PDFs are copyrighted and excluded from the repository; this map shows counts and structure only.
+  </footer>
+</div>
+
+<script>
+const DATA = {"total":508,"chunks":143233,"l1":252,"l2":4009,"byYear":[{"k":"1982","v":1},{"k":"1983","v":1},{"k":"1986","v":2},{"k":"1987","v":1},{"k":"1988","v":1},{"k":"1990","v":1},{"k":"1991","v":4},{"k":"1992","v":3},{"k":"1993","v":1},{"k":"1994","v":3},{"k":"1995","v":3},{"k":"1996","v":2},{"k":"1997","v":3},{"k":"1998","v":3},{"k":"1999","v":7},{"k":"2000","v":3},{"k":"2001","v":8},{"k":"2002","v":15},{"k":"2003","v":12},{"k":"2004","v":11},{"k":"2005","v":9},{"k":"2006","v":9},{"k":"2007","v":7},{"k":"2008","v":16},{"k":"2009","v":23},{"k":"2010","v":20},{"k":"2011","v":27},{"k":"2012","v":23},{"k":"2013","v":32},{"k":"2014","v":29},{"k":"2015","v":29},{"k":"2016","v":34},{"k":"2017","v":44},{"k":"2018","v":27},{"k":"2019","v":30},{"k":"2020","v":32},{"k":"2021","v":19},{"k":"2022","v":10},{"k":"2023","v":2}],"bySoc":[{"k":"Trial/Other","v":279},{"k":"ACC","v":110},{"k":"CSANZ","v":47},{"k":"ESC","v":46},{"k":"AHA","v":26}],"byJnl":[{"k":"Guideline/Other","v":231},{"k":"NEJM","v":186},{"k":"Lancet","v":50},{"k":"JAMA","v":18},{"k":"Circulation","v":11},{"k":"JACC","v":10},{"k":"Eur Heart J","v":2}],"l1sizes":[3428,2411,2240,2129,1972,1830,1775,1724,1723,1681,1680,1649,1609,1608,1571,1508,1507,1455,1302,1282,1262,1246,1239,1224,1222,1196,1182,1173,1171,1169,1132,1120,1117,1114,1103,1092,1079,1063,1053,1042,1036,1033,1028,973,963,954,951,945,932,919,899,896,880,878,874,872,855,848,848,839,835,835,829,816,815,813,800,798,794,792,774,761,754,741,725,719,718,712,708,708,707,704,665,658,633,632,623,615,614,613,611,609,599,592,588,581,577,575,569,569,568,566,552,549,544,543,531,522,520,517,517,516,513,508,506,499,496,494,491,480,477,472,468,467,462,458,457,444,444,436,434,430,424,418,416,408,403,402,399,392,384,380,373,373,372,371,363,355,352,351,349,321,320,317,311,307,299,298,295,285,285,283,278,269,263,260,256,256,255,252,247,246,244,239,238,237,236,231,224,210,209,208,206,204,204,193,188,186,185,185,185,184,179,179,179,173,172,170,169,169,164,163,156,155,152,152,151,142,136,134,133,129,127,127,127,126,112,110,98,79,75,39,30,30,29,28,28,23,22,21,20,19,18,17,17,16,16,16,15,15,15,15,12,12,11,10,10,10,10,8,8,3]};
+
+const fmt = n => n.toLocaleString();
+
+// KPIs
+const yrs = DATA.byYear.map(d => +d.k);
+const kpis = [
+  { num: fmt(DATA.total), lbl: "indexed documents" },
+  { num: fmt(DATA.chunks), lbl: "graph nodes (chunks)" },
+  { num: fmt(DATA.l1), lbl: "level-1 communities" },
+  { num: fmt(DATA.l2), lbl: "level-2 communities" },
+  { num: Math.min(...yrs) + "\u2013" + Math.max(...yrs), lbl: "publication span" },
+];
+document.getElementById("kpis").innerHTML = kpis.map(k =>
+  `<div class="kpi"><div class="num">${k.num}</div><div class="lbl">${k.lbl}</div></div>`).join("");
+
+// Timeline
+const maxYr = Math.max(...DATA.byYear.map(d => d.v));
+document.getElementById("timeline").innerHTML = DATA.byYear.map(d => {
+  const h = (d.v / maxYr * 100).toFixed(1);
+  return `<div class="tl-col" title="${d.k}: ${d.v} documents">
+    <div class="tl-val">${d.v}</div>
+    <div class="tl-bar" style="height:${h}%"></div>
+    <div class="tl-yr">${d.k}</div></div>`;
+}).join("");
+
+// Horizontal bars
+function hbars(elId, rows) {
+  const max = Math.max(...rows.map(r => r.v));
+  document.getElementById(elId).innerHTML = rows.map(r => {
+    const w = (r.v / max * 100).toFixed(1);
+    return `<div class="hbar-row">
+      <div class="hbar-lbl">${r.k}</div>
+      <div class="hbar-track"><div class="hbar-fill" style="width:${w}%"></div></div>
+      <div class="hbar-val">${r.v}</div></div>`;
+  }).join("");
+}
+hbars("soc", DATA.bySoc);
+hbars("jnl", DATA.byJnl);
+
+// Hierarchy
+const hier = [
+  { n: "1", l: "level 0 (root)", d: "the entire corpus as one community" },
+  { n: fmt(58), l: "level 1 (macro)", d: "58 broad themes at the coarsest useful clustering" },
+  { n: fmt(DATA.l1), l: "level 1 (detail)", d: DATA.l1 + " communities carried through indexing" },
+  { n: fmt(DATA.l2), l: "level 2", d: "fine-grained sub-topics used for focused retrieval" },
+];
+document.getElementById("hier").innerHTML =
+  `<div class="hier-lvl">` +
+  hier.map((h, i) =>
+    `<div class="hier-node"><span class="n">${h.n}</span><span class="l">${h.l}</span></div>` +
+    (i < hier.length - 1 ? `<span class="hier-arrow">&rarr;</span>` : "")
+  ).join("") + `</div>` +
+  `<div class="hier-desc">Root &rarr; macro themes &rarr; detailed communities &rarr; sub-topics. A query descends this tree: broad questions summarize whole communities; specific questions drill into level-2 chunks.</div>`;
+
+// Community size treemap-ish (proportional squares by area)
+const sizes = DATA.l1sizes;
+const total = sizes.reduce((a, b) => a + b, 0);
+const containerW = 1080, targetArea = 46000; // px^2 budget scaling
+// scale so total area ~ number of cells fit; compute side = sqrt(area)
+const scale = 30000 / Math.max(...sizes); // side scaling factor
+const comm = document.getElementById("comm");
+comm.innerHTML = sizes.map((s, i) => {
+  const side = Math.max(7, Math.round(Math.sqrt(s) * 1.15));
+  const op = (0.45 + 0.5 * (s / Math.max(...sizes))).toFixed(2);
+  return `<div class="comm-cell" style="width:${side}px;height:${side}px;opacity:${op}" title="Community #${i + 1}: ${fmt(s)} chunks"></div>`;
+}).join("");
+document.getElementById("commLegend").innerHTML =
+  `Largest community: <strong>${fmt(Math.max(...sizes))}</strong> chunks &middot; ` +
+  `smallest: <strong>${fmt(Math.min(...sizes))}</strong> &middot; ` +
+  `median: <strong>${fmt(sizes.slice().sort((a,b)=>a-b)[Math.floor(sizes.length/2)])}</strong> &middot; ` +
+  `${DATA.l1} communities across ${fmt(total)} chunk-memberships.`;
+
+// Labeled top communities (dominant source docs)
+const COMM_LABELS = [{"community":45,"chunks":3428,"topDocs":"2021 ESC Guidelines on cardiovascular disease prevention in clinical practice | 2022 AHA_ACC_HFSA Guideline for the Management of Heart Failure"},{"community":153,"chunks":2411,"topDocs":"2022 ACC_AHA Guideline for the Diagnosis and Management of Aortic Disease | 2020 ACC Guideline for management of patients with valvular heart disease"},{"community":111,"chunks":2240,"topDocs":"2020 CSANZ Rheumatic Heart Disease | 2021 ESC Guidelines on cardiovascular disease prevention in clinical practice"},{"community":125,"chunks":2129,"topDocs":"2017 ACC Guideline for management of patients with ventricular arrythmia and the prevention SCD | 2022 AHA_ACC_HFSA Guideline for the Management of Heart Failure"},{"community":171,"chunks":1972,"topDocs":"2020 ACC Guideline for management of patients with valvular heart disease | 2021 ESC Guidelines on cardiovascular disease prevention in clinical practice"},{"community":166,"chunks":1830,"topDocs":"2022 ACC_AHA Guideline for the Diagnosis and Management of Aortic Disease | 2017 ACC Guideline for management of patients with ventricular arrythmia and the prevention SCD"},{"community":165,"chunks":1775,"topDocs":"2020 ACC Guideline for management of patients with valvular heart disease | 2022 ACC_AHA Guideline for the Diagnosis and Management of Aortic Disease"},{"community":36,"chunks":1724,"topDocs":"2022 ACC_AHA Guideline for the Diagnosis and Management of Aortic Disease | 2022 AHA_ACC_HFSA Guideline for the Management of Heart Failure"},{"community":117,"chunks":1723,"topDocs":"2017 ACC Guideline for management of patients with ventricular arrythmia and the prevention SCD | 2022 AHA_ACC_HFSA Guideline for the Management of Heart Failure"},{"community":104,"chunks":1681,"topDocs":"2021 ESC Guidelines on cardiovascular disease prevention in clinical practice | 2022 ACC_AHA Guideline for the Diagnosis and Management of Aortic Disease"},{"community":149,"chunks":1680,"topDocs":"2022 AHA_ACC_HFSA Guideline for the Management of Heart Failure | 2022 ACC_AHA Guideline for the Diagnosis and Management of Aortic Disease"},{"community":158,"chunks":1649,"topDocs":"2020 ACC Guideline for management of patients with valvular heart disease | 2017 ACC Guideline for the prevention, detection, evaluation and management of high blood pressure in adults"},{"community":110,"chunks":1609,"topDocs":"2020 ACC Guideline for management of patients with valvular heart disease | 2020 CSANZ Rheumatic Heart Disease"},{"community":41,"chunks":1608,"topDocs":"2022 AHA_ACC_HFSA Guideline for the Management of Heart Failure | 2020 ACC Guideline for management of patients with valvular heart disease"},{"community":115,"chunks":1571,"topDocs":"2020 ACC Guideline for management of patients with valvular heart disease | 2022 AHA_ACC_HFSA Guideline for the Management of Heart Failure"}];
+const maxCommChunks = Math.max(...COMM_LABELS.map(c => c.chunks));
+document.getElementById("commTable").innerHTML = COMM_LABELS.map(c => {
+  const docs = c.topDocs.split(" | ").map(d => `<span class="doc-chip">${d}</span>`).join("");
+  const w = (c.chunks / maxCommChunks * 100).toFixed(1);
+  return `<div class="ct-row">
+    <div class="ct-id">#${c.community}</div>
+    <div class="ct-main">
+      <div class="ct-bar-track"><div class="ct-bar" style="width:${w}%"></div><span class="ct-n">${fmt(c.chunks)} chunks</span></div>
+      <div class="ct-docs">${docs}</div>
+    </div></div>`;
+}).join("");
+</script>
+</body>
+</html>

@@ -17,6 +17,12 @@ rigour, and research ethics — all orchestrated through a chat-driven experienc
 > reviews to the final revision — with the actual citation corrections and findings
 > (e.g. the ESC AF ref 709 misattribution, the sinoatrial-node quote misapplication,
 > and the Pennes-perfusion circularity fix) that drove each change.
+>
+> 🗺️ **See the knowledge base at a glance:** open
+> [evaluation/bookshelf-map.html](evaluation/bookshelf-map.html) in a browser for an
+> interactive map of the `cardiology-canon-v2` corpus — 508 documents by year,
+> society, and journal, plus the GraphRAG community structure (143,233 indexed
+> chunks across 252 top-level communities).
 
 ---
 
