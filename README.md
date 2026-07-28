@@ -23,6 +23,11 @@ rigour, and research ethics — all orchestrated through a chat-driven experienc
 > interactive map of the `cardiology-canon-v2` corpus — 508 documents by year,
 > society, and journal, plus the GraphRAG community structure (143,233 indexed
 > chunks across 252 top-level communities).
+>
+> 🖥️ **New to Discovery?** [evaluation/app-walkthrough.md](evaluation/app-walkthrough.md)
+> is a screenshot tour of the app itself — the Bookshelf, Tasks, Purpose, Engines,
+> and Agents panels, the live runtime controls, and how a task turns a curated corpus
+> into a peer-reviewed deliverable.
 
 ---
 

@@ -101,6 +101,7 @@ body {
 .doc hr { border: none; border-top: 1px solid var(--cp-border); margin: 30px 0; }
 .doc ul, .doc ol { padding-left: 24px; }
 .doc li { margin: 5px 0; }
+.doc img { max-width: 100%; height: auto; border: 1px solid var(--cp-border); border-radius: 10px; margin: 10px 0; display: block; }
 .doc .mermaid { text-align: center; margin: 22px 0; background: var(--cp-surface-soft); border: 1px solid var(--cp-border); border-radius: 12px; padding: 18px; }
 .status { color: var(--cp-text-soft); text-align: center; padding: 60px 0; }
 .crumb { font-size: 0.82rem; color: var(--cp-text-soft); margin: 0 auto 14px; max-width: 860px; padding: 0 24px; }
@@ -132,6 +133,7 @@ body {
 const BASE = "evaluation/";
 const DOCS = {
   "process-narrative": { file: "process-narrative.md", label: "Process flow (narrative)" },
+  "walkthrough":       { file: "app-walkthrough.md", label: "Discovery app walkthrough" },
   "abstracts-v2":      { file: "af-rotor-abstracts-v2.md", label: "Final abstracts (v2)" },
   "abstracts-v1":      { file: "af-rotor-abstracts.md", label: "First-draft abstracts (v1)" },
   "topics":            { file: "af-rotor-research-topics.md", label: "Research topics (DX-18)" },
@@ -207,6 +209,13 @@ function render(md) {
     } else if (clean.endsWith(".html")) {
       a.setAttribute("href", clean);
     }
+  });
+
+  // Rewrite relative image paths (e.g. images/foo.png) to sit under evaluation/
+  docEl.querySelectorAll("img[src]").forEach(img => {
+    let src = img.getAttribute("src");
+    if (!src || src.startsWith("http") || src.startsWith("data:") || src.startsWith("/")) return;
+    img.setAttribute("src", BASE + src.replace(/^\.\//, "").replace(/^evaluation\//, ""));
   });
 
   // Render LaTeX math
