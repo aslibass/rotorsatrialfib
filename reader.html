@@ -57,27 +57,11 @@ body {
   font-family: "Segoe UI", Aptos, Calibri, -apple-system, BlinkMacSystemFont, sans-serif;
   background: var(--cp-bg); color: var(--cp-text); line-height: 1.6;
 }
-/* top nav */
-.nav {
-  position: sticky; top: 0; z-index: 20;
-  display: flex; align-items: center; flex-wrap: wrap; gap: 6px;
-  padding: 10px 20px; background: var(--cp-bg-elevated);
-  border-bottom: 1px solid var(--cp-border);
-}
-.nav .brand { font-weight: 700; font-size: 0.95rem; margin-right: 10px; white-space: nowrap; }
-.nav a { text-decoration: none; color: var(--cp-text-muted); font-size: 0.86rem; padding: 6px 11px; border-radius: 8px; white-space: nowrap; }
-.nav a:hover { color: var(--cp-text); background: var(--cp-surface-soft); }
-.nav a.active { color: var(--cp-accent-fg); background: var(--cp-accent); }
-.nav .spacer { flex: 1; }
-.nav select {
-  font-family: inherit; font-size: 0.82rem; padding: 6px 10px; border-radius: 8px;
-  background: var(--cp-surface); color: var(--cp-text); border: 1px solid var(--cp-border);
-}
 /* reading column */
 .wrap { max-width: 860px; margin: 0 auto; padding: 30px 24px 80px; }
 .doc {
   background: var(--cp-surface); border: 1px solid var(--cp-border);
-  border-radius: 16px; padding: 40px 48px;
+  border-radius: 16px; padding: 40px 48px; overflow-x: auto;
   box-shadow: 0 0 2px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.14);
 }
 .doc h1 { font-size: 1.7rem; letter-spacing: -0.02em; margin: 0 0 18px; line-height: 1.25; }
@@ -107,16 +91,18 @@ body {
 .crumb { font-size: 0.82rem; color: var(--cp-text-soft); margin: 0 auto 14px; max-width: 860px; padding: 0 24px; }
 .crumb a { color: var(--cp-link); text-decoration: none; }
 </style>
+<link rel="stylesheet" href="site-navigation.css" />
 </head>
-<body>
-  <nav class="nav" id="nav">
-    <span class="brand">🫀 Cardiology Canon 2026</span>
-    <a href="index.html">Overview</a>
-    <a href="reader.html?doc=process-narrative" data-doc="process-narrative">1 · Process flow</a>
-    <a href="evaluation/bookshelf-map.html">2 · Bookshelf map</a>
-    <a href="reader.html?doc=abstracts-v2" data-doc="abstracts-v2">3 · Final abstracts</a>
-    <span class="spacer"></span>
-    <select id="jump" title="Jump to any document"></select>
+<body class="reader-page">
+  <nav class="site-nav" aria-label="Main navigation">
+    <span class="brand">Cardiology Canon 2026</span>
+    <a href="index.html">Home</a>
+    <a href="reader.html?doc=process-narrative" data-doc="process-narrative">Process flow</a>
+    <a href="evaluation/bookshelf-map.html">Bookshelf map</a>
+    <a href="reader.html?doc=abstracts-v2" data-doc="abstracts-v2">Final abstracts</a>
+    <label class="doc-jump" for="jump">Jump to document
+      <select id="jump"></select>
+    </label>
   </nav>
 
   <div class="crumb" id="crumb"></div>
@@ -162,20 +148,15 @@ Object.entries(DOCS).forEach(([k, v]) => {
 jump.addEventListener("change", () => { location.search = "?doc=" + jump.value; });
 
 // Highlight active primary nav item
-document.querySelectorAll(".nav a[data-doc]").forEach(a => {
-  if (a.getAttribute("data-doc") === key) a.classList.add("active");
-});
-
-mermaid.initialize({
-  startOnLoad: false,
-  theme: document.documentElement.getAttribute("data-theme") === "dark" ? "dark" : "neutral",
-  securityLevel: "strict"
+document.querySelectorAll(".site-nav a[data-doc]").forEach(a => {
+  if (a.getAttribute("data-doc") === key) a.setAttribute("aria-current", "page");
 });
 
 const docEl = document.getElementById("doc");
 const crumbEl = document.getElementById("crumb");
 
-fetch(BASE + DOCS[key].file)
+const documentURL = new URL(BASE + DOCS[key].file, location.href);
+fetch(documentURL)
   .then(r => { if (!r.ok) throw new Error(r.status + " " + r.statusText); return r.text(); })
   .then(md => render(md))
   .catch(err => {
@@ -198,24 +179,30 @@ function render(md) {
     code.closest("pre").replaceWith(div);
   });
 
-  // Rewrite in-document links: .md -> reader.html?doc=key ; leave .html and external as-is
+  // Resolve links from the source document, not the reader's root directory.
   docEl.querySelectorAll("a[href]").forEach(a => {
-    let href = a.getAttribute("href");
-    if (!href || href.startsWith("http") || href.startsWith("#")) return;
-    const clean = href.split("#")[0].split("?")[0].replace(/^\.\//, "").replace(/^evaluation\//, "");
-    if (clean === "" || clean === ".") { a.setAttribute("href", "index.html"); return; }
-    if (clean.endsWith(".md") && FILE_TO_KEY[clean]) {
-      a.setAttribute("href", "reader.html?doc=" + FILE_TO_KEY[clean]);
-    } else if (clean.endsWith(".html")) {
-      a.setAttribute("href", clean);
+    const href = a.getAttribute("href");
+    if (!href || href.startsWith("#") || /^[a-z][a-z\d+.-]*:|^\/\//i.test(href)) return;
+    if (href === "." || href === "./") { a.setAttribute("href", "index.html"); return; }
+    const target = new URL(href, documentURL);
+    const file = target.pathname.slice(target.pathname.lastIndexOf("/") + 1);
+    const targetKey = FILE_TO_KEY[file];
+    if (targetKey && target.pathname === new URL(BASE + DOCS[targetKey].file, location.href).pathname) {
+      const readerURL = new URL("reader.html", location.href);
+      readerURL.search = target.search;
+      readerURL.searchParams.set("doc", targetKey);
+      readerURL.hash = target.hash;
+      a.href = readerURL.href;
+    } else {
+      a.href = target.href;
     }
   });
 
-  // Rewrite relative image paths (e.g. images/foo.png) to sit under evaluation/
+  // Assets use the same source-document base as links.
   docEl.querySelectorAll("img[src]").forEach(img => {
     let src = img.getAttribute("src");
     if (!src || src.startsWith("http") || src.startsWith("data:") || src.startsWith("/")) return;
-    img.setAttribute("src", BASE + src.replace(/^\.\//, "").replace(/^evaluation\//, ""));
+    img.src = new URL(src, documentURL).href;
   });
 
   // Render LaTeX math
@@ -231,7 +218,18 @@ function render(md) {
 
   // Render mermaid diagrams
   if (window.mermaid) {
-    try { mermaid.run({ nodes: docEl.querySelectorAll(".mermaid") }); } catch (e) { /* noop */ }
+    mermaid.initialize({
+      startOnLoad: false,
+      theme: document.documentElement.getAttribute("data-theme") === "dark" ? "dark" : "neutral",
+      securityLevel: "strict"
+    });
+    mermaid.run({ nodes: docEl.querySelectorAll(".mermaid") }).catch(err => {
+      console.error("Could not render document diagrams", err);
+      const status = document.createElement("p");
+      status.className = "status";
+      status.textContent = "Could not render diagrams. Reload with access to the rendering CDN.";
+      docEl.appendChild(status);
+    });
   }
 }
 </script>

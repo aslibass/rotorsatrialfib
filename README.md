@@ -31,6 +31,25 @@ rigour, and research ethics — all orchestrated through a chat-driven experienc
 
 ---
 
+## Viewing the website
+
+From the repository root, run `python -m http.server 8000 --bind 127.0.0.1`
+and open <http://127.0.0.1:8000/index.html>. Do not open `reader.html` with
+`file://`: browsers block its Markdown fetches from local files.
+
+All pages share a vertically centered left navigation rail with Home, Process
+flow, Bookshelf map, and Final abstracts. On narrow screens the controls move to
+a bottom dock, with space reserved below the content. The reader's document
+dropdown remains available there for individual review reports.
+
+Publish the repository root, including `site-navigation.css`, `evaluation/`
+(Markdown and `images/`), and `.nojekyll`, together. The reader resolves report
+links and images relative to the source Markdown document, including when hosted
+under a repository subpath. Markdown, math, and diagram rendering still require
+internet access to the existing jsDelivr CDN.
+
+---
+
 ## ⚠️ Bring your own literature
 
 The knowledge base was built from **hundreds of copyrighted journal articles and
